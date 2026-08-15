@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Gera um site totalmente estático em /out, compatível com GitHub Pages.
+  output: "export",
+  trailingSlash: true,
 };
 
 export default nextConfig;
