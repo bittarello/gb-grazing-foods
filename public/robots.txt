@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gbgrazingfoods.com.br/sitemap.xml
+Host: https://gbgrazingfoods.com.br
