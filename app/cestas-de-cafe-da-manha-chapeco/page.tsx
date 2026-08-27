@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 const siteUrl = "https://gbgrazingfoods.com.br";
 const path = "/cestas-de-cafe-da-manha-chapeco/";
@@ -37,7 +38,7 @@ const faqs = [
 ];
 
 function Brand() {
-  return <a className="brand" href="/" aria-label="GB Grazing Foods - página inicial"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></a>;
+  return <Link className="brand" href="/" aria-label="GB Grazing Foods - página inicial"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></Link>;
 }
 
 export default function Page() {
@@ -58,7 +59,7 @@ export default function Page() {
 
     <header className="site-header">
       <Brand />
-      <nav aria-label="Navegação da página"><a href="/">Início</a><a href="#momentos">Momentos</a><a href="#como-encomendar">Como pedir</a><a href="#duvidas">Dúvidas</a></nav>
+      <nav aria-label="Navegação da página"><Link href="/">Início</Link><a href="#momentos">Momentos</a><a href="#como-encomendar">Como pedir</a><a href="#duvidas">Dúvidas</a></nav>
       <a className="button button-small button-outline header-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">↗</span></a>
     </header>
 
@@ -81,7 +82,7 @@ export default function Page() {
     <section className="section care-section" id="opcoes" aria-labelledby="opcoes-title">
       <div className="care-image"><img src="/images/gb-presentes.webp" alt="Cesta artesanal preparada para presentear" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>afeto</strong></div></div>
       <div className="care-copy"><p className="eyebrow">Consulte o que está disponível</p><h2 id="opcoes-title">Conheça nossas opções de café da manhã</h2><ol>
-        <li><span>1</span><div><h3>Opções orientadas pela Gabi</h3><p>Enquanto não há um catálogo estruturado nesta página, fale pelo WhatsApp para conhecer as opções disponíveis, formatos, sabores, valores e detalhes.</p></div></li>
+        <li><span>1</span><div><h3>Opções orientadas pela Gabi</h3><p>Fale pelo WhatsApp para conhecer as opções disponíveis e receber orientação sobre formatos, sabores, valores e detalhes.</p></div></li>
         <li><span>2</span><div><h3>Escolha de acordo com o momento</h3><p>Conte quem vai receber, qual é a ocasião e quando você precisa para receber uma orientação pessoal.</p></div></li>
       </ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções disponíveis <span aria-hidden="true">→</span></a><p className="whatsapp-microcopy">WhatsApp · Atendimento pessoal pela Gabi</p></div>
     </section>
@@ -118,6 +119,6 @@ export default function Page() {
 
     <section className="final-cta"><p className="eyebrow light">Quer transformar carinho em presente?</p><h2>Converse com a Gabi.<br /><em>Conheça as opções disponíveis.</em></h2><p>Cestas de café da manhã em Chapecó e região, com atendimento pessoal e pedidos conforme disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">→</span></a></section>
 
-    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Pedidos preferencialmente com 24h de antecedência.</span></div><div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções pelo WhatsApp</a><a href="/">Voltar para a página inicial</a></div></footer>
+    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Pedidos preferencialmente com 24h de antecedência.</span></div><div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções pelo WhatsApp</a><Link href="/">Voltar para a página inicial</Link></div></footer>
   </main>;
 }
