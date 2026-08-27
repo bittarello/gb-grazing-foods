@@ -25,7 +25,7 @@ const occasions = [
 ];
 
 const products = [
-  { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: whatsapp.breakfast },
+  { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: "/cestas-de-cafe-da-manha-chapeco/" },
   { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Quero ver as tábuas", href: whatsapp.boards },
   { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Quero uma tábua", href: whatsapp.boards },
   { label: "Presentes corporativos em Chapecó", title: "Experiências Corporativas", text: "Presentes, coffee breaks e experiências para reconhecer clientes, equipes e parceiros.", cta: "Conhecer soluções para empresas", href: whatsapp.corporate },
