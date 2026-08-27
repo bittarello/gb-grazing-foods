@@ -1,5 +1,6 @@
 const instagramUrl = "https://www.instagram.com/gabi.gbgrazingfoods/";
 const whatsappNumber = "5549999442478";
+const breakfastPage = "/cestas-de-cafe-da-manha-chapeco/";
 
 const messages = {
   order: "Olá Gabi! Vim pelo site da GB Grazing Foods e gostaria de fazer um pedido. Pode me ajudar?",
@@ -19,13 +20,13 @@ const whatsapp = {
 };
 
 const occasions = [
-  { number: "01", title: "Presentear", text: "Cestas de café da manhã, boxes e mimos para aniversários, agradecimentos e todo gesto que merece cuidado.", image: "/images/gb-presentes.webp", alt: "Cesta de café da manhã artesanal preparada em Chapecó", cta: "Quero escolher um presente", href: whatsapp.gift },
+  { number: "01", title: "Presentear", text: "Cestas de café da manhã, boxes e mimos para aniversários, agradecimentos e todo gesto que merece cuidado.", image: "/images/gb-presentes.webp", alt: "Cesta de café da manhã artesanal preparada em Chapecó", cta: "Ver cestas de café da manhã", href: breakfastPage },
   { number: "02", title: "Compartilhar", text: "Tábuas de frios para casal, amigos e família, noites de vinho e aquele encontro especial.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Quero ver as tábuas", href: whatsapp.boards },
   { number: "03", title: "Celebrar", text: "Grazing tables e experiências para aniversários, comemorações, recepções e encontros especiais.", image: "/images/gb-eventos.webp", alt: "Grazing table elegante preparada para uma celebração", cta: "Planejar uma celebração", href: whatsapp.event },
 ];
 
 const products = [
-  { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: "/cestas-de-cafe-da-manha-chapeco/" },
+  { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: breakfastPage },
   { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Quero ver as tábuas", href: whatsapp.boards },
   { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Quero uma tábua", href: whatsapp.boards },
   { label: "Presentes corporativos em Chapecó", title: "Experiências Corporativas", text: "Presentes, coffee breaks e experiências para reconhecer clientes, equipes e parceiros.", cta: "Conhecer soluções para empresas", href: whatsapp.corporate },
@@ -72,7 +73,7 @@ export default function Home() {
           <p className="hero-description">Cestas de café da manhã, tábuas de frios, presentes especiais e experiências gastronômicas preparadas pela Gabi para presentear, compartilhar e celebrar.</p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer um pedido pelo WhatsApp <span aria-hidden="true">→</span></a>
-            <a className="text-link" href="#ocasioes">Conhecer as experiências</a>
+            <a className="text-link" href={breakfastPage}>Ver cestas de café da manhã</a>
           </div>
           <p className="order-note">Atendimento pessoal pela Gabi · Pedidos conforme disponibilidade</p>
           <div className="hero-proof" aria-label="Informações comerciais da GB"><span>Opções a partir de R$ 95</span><span>Produção artesanal</span><span>Entregas em Chapecó e região</span></div>
@@ -91,11 +92,14 @@ export default function Home() {
           <p>Você escolhe a ocasião. A Gabi orienta pessoalmente as opções, sabores e detalhes para que tudo chegue com significado.</p>
         </div>
         <div className="occasion-grid">
-          {occasions.map((occasion) => <article className="occasion-card" key={occasion.title}>
-            <div className="occasion-image"><img src={occasion.image} alt={occasion.alt} loading="lazy" decoding="async" /><span>{occasion.number}</span></div>
-            <h3>{occasion.title}</h3><p>{occasion.text}</p>
-            <a href={occasion.href} target="_blank" rel="noreferrer" aria-label={`${occasion.cta} pelo WhatsApp`}>{occasion.cta} <span aria-hidden="true">→</span></a>
-          </article>)}
+          {occasions.map((occasion) => {
+            const opensWhatsApp = occasion.href.startsWith("https://wa.me/");
+            return <article className="occasion-card" key={occasion.title}>
+              <div className="occasion-image"><img src={occasion.image} alt={occasion.alt} loading="lazy" decoding="async" /><span>{occasion.number}</span></div>
+              <h3>{occasion.title}</h3><p>{occasion.text}</p>
+              <a href={occasion.href} target={opensWhatsApp ? "_blank" : undefined} rel={opensWhatsApp ? "noreferrer" : undefined} aria-label={opensWhatsApp ? `${occasion.cta} pelo WhatsApp` : occasion.cta}>{occasion.cta} <span aria-hidden="true">→</span></a>
+            </article>;
+          })}
         </div>
         <article className="corporate-strip">
           <div className="corporate-number">04</div>
@@ -112,10 +116,13 @@ export default function Home() {
       <section className="section experiences-section" id="experiencias">
         <div className="experiences-intro"><p className="eyebrow light">Opções concretas para comprar</p><h2>Comece pelo que<br /><em>você quer fazer sentir.</em></h2><p>Há opções individuais, para duas pessoas e composições maiores. Fale diretamente com a Gabi para conhecer o cardápio disponível.</p></div>
         <div className="product-list">
-          {products.map((product, index) => <article className="product-item" key={product.title}>
-            <span className="product-index">0{index + 1}</span>
-            <div><p className="product-label">{product.label}</p><h3>{product.title}</h3><p>{product.text}</p><a className="product-cta" href={product.href} target="_blank" rel="noreferrer">{product.cta} <span aria-hidden="true">→</span></a></div>
-          </article>)}
+          {products.map((product, index) => {
+            const opensWhatsApp = product.href.startsWith("https://wa.me/");
+            return <article className="product-item" key={product.title}>
+              <span className="product-index">0{index + 1}</span>
+              <div><p className="product-label">{product.label}</p><h3>{product.title}</h3><p>{product.text}</p><a className="product-cta" href={product.href} target={opensWhatsApp ? "_blank" : undefined} rel={opensWhatsApp ? "noreferrer" : undefined}>{product.cta} <span aria-hidden="true">→</span></a></div>
+            </article>;
+          })}
         </div>
       </section>
 
