@@ -1,6 +1,7 @@
 const instagramUrl = "https://www.instagram.com/gabi.gbgrazingfoods/";
 const whatsappNumber = "5549999442478";
 const breakfastPage = "/cestas-de-cafe-da-manha-chapeco/";
+const boardsPage = "/tabuas-de-frios-chapeco/";
 
 const messages = {
   order: "Olá Gabi! Vim pelo site da GB Grazing Foods e gostaria de fazer um pedido. Pode me ajudar?",
@@ -21,14 +22,14 @@ const whatsapp = {
 
 const occasions = [
   { number: "01", title: "Presentear", text: "Cestas de café da manhã, boxes e mimos para aniversários, agradecimentos e todo gesto que merece cuidado.", image: "/images/gb-presentes.webp", alt: "Cesta de café da manhã artesanal preparada em Chapecó", cta: "Ver cestas de café da manhã", href: breakfastPage },
-  { number: "02", title: "Compartilhar", text: "Tábuas de frios para casal, amigos e família, noites de vinho e aquele encontro especial.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Quero ver as tábuas", href: whatsapp.boards },
+  { number: "02", title: "Compartilhar", text: "Tábuas de frios para casal, amigos e família, noites de vinho e aquele encontro especial.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Ver tábuas de frios", href: boardsPage },
   { number: "03", title: "Celebrar", text: "Grazing tables e experiências para aniversários, comemorações, recepções e encontros especiais.", image: "/images/gb-eventos.webp", alt: "Grazing table elegante preparada para uma celebração", cta: "Planejar uma celebração", href: whatsapp.event },
 ];
 
 const products = [
   { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: breakfastPage },
-  { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Quero ver as tábuas", href: whatsapp.boards },
-  { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Quero uma tábua", href: whatsapp.boards },
+  { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Ver tábuas de frios", href: boardsPage },
+  { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Conhecer tábuas de frios", href: boardsPage },
   { label: "Presentes corporativos em Chapecó", title: "Experiências Corporativas", text: "Presentes, coffee breaks e experiências para reconhecer clientes, equipes e parceiros.", cta: "Conhecer soluções para empresas", href: whatsapp.corporate },
 ];
 
