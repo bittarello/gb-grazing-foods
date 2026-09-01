@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gbgrazingfoods.com.br/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://gbgrazingfoods.com.br/cestas-de-cafe-da-manha-chapeco/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://gbgrazingfoods.com.br/tabuas-de-frios-chapeco/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://gbgrazingfoods.com.br/grazing-table-chapeco/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://gbgrazingfoods.com.br/presentes-corporativos-chapeco/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://gbgrazingfoods.com.br/coffee-break-chapeco/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
 </urlset>
