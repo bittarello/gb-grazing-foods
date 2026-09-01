@@ -1,3 +1,4 @@
+const siteUrl = "https://gbgrazingfoods.com.br";
 const instagramUrl = "https://www.instagram.com/gabi.gbgrazingfoods/";
 const whatsappNumber = "5549999442478";
 const breakfastPage = "/cestas-de-cafe-da-manha-chapeco/";
@@ -50,10 +51,27 @@ function WhatsAppIcon() {
 
 export default function Home() {
   const structuredData = {
-    "@context": "https://schema.org", "@type": "FoodEstablishment", name: "GB Grazing Foods",
-    description: "Cestas de café da manhã, tábuas de frios, presentes especiais, eventos e experiências gastronômicas em Chapecó e região.",
-    telephone: "+55 49 99944-2478", priceRange: "A partir de R$ 95",
-    areaServed: { "@type": "City", name: "Chapecó" }, sameAs: [instagramUrl],
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: `${siteUrl}/`,
+        name: "GB Grazing Foods",
+        alternateName: "GB",
+        publisher: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "GB Grazing Foods",
+        alternateName: "GB",
+        url: `${siteUrl}/`,
+        description: "Cestas de café da manhã, tábuas de frios, presentes e experiências gastronômicas em Chapecó e região.",
+        telephone: "+55 49 99944-2478",
+        sameAs: [instagramUrl],
+      },
+    ],
   };
 
   return (
