@@ -3,6 +3,9 @@ const instagramUrl = "https://www.instagram.com/gabi.gbgrazingfoods/";
 const whatsappNumber = "5549999442478";
 const breakfastPage = "/cestas-de-cafe-da-manha-chapeco/";
 const boardsPage = "/tabuas-de-frios-chapeco/";
+const eventsPage = "/grazing-table-chapeco/";
+const corporatePage = "/presentes-corporativos-chapeco/";
+const coffeeBreakPage = "/coffee-break-chapeco/";
 
 const messages = {
   order: "Olá Gabi! Vim pelo site da GB Grazing Foods e gostaria de fazer um pedido. Pode me ajudar?",
@@ -24,14 +27,15 @@ const whatsapp = {
 const occasions = [
   { number: "01", title: "Presentear", text: "Cestas de café da manhã, boxes e mimos para aniversários, agradecimentos e todo gesto que merece cuidado.", image: "/images/gb-presentes.webp", alt: "Cesta de café da manhã artesanal preparada em Chapecó", cta: "Ver cestas de café da manhã", href: breakfastPage },
   { number: "02", title: "Compartilhar", text: "Tábuas de frios para casal, amigos e família, noites de vinho e aquele encontro especial.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Ver tábuas de frios", href: boardsPage },
-  { number: "03", title: "Celebrar", text: "Grazing tables e experiências para aniversários, comemorações, recepções e encontros especiais.", image: "/images/gb-eventos.webp", alt: "Grazing table elegante preparada para uma celebração", cta: "Planejar uma celebração", href: whatsapp.event },
+  { number: "03", title: "Celebrar", text: "Grazing tables e mesas gastronômicas para aniversários, recepções, comemorações e encontros especiais.", image: "/images/gb-eventos.webp", alt: "Mesa gastronômica preparada para uma celebração", cta: "Ver mesas para eventos", href: eventsPage },
 ];
 
 const products = [
   { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: breakfastPage },
   { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Ver tábuas de frios", href: boardsPage },
   { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Conhecer tábuas de frios", href: boardsPage },
-  { label: "Presentes corporativos em Chapecó", title: "Experiências Corporativas", text: "Presentes, coffee breaks e experiências para reconhecer clientes, equipes e parceiros.", cta: "Conhecer soluções para empresas", href: whatsapp.corporate },
+  { label: "Presentes corporativos", title: "Experiências Corporativas", text: "Presentes e experiências para reconhecer clientes, equipes e parceiros.", cta: "Ver presentes corporativos", href: corporatePage },
+  { label: "Coffee break", title: "Coffee Break para Reuniões", text: "Opções para reuniões, treinamentos e encontros corporativos, orientadas conforme quantidade e formato.", cta: "Conhecer coffee break", href: coffeeBreakPage },
 ];
 
 const faqs = [
@@ -122,8 +126,8 @@ export default function Home() {
         </div>
         <article className="corporate-strip">
           <div className="corporate-number">04</div>
-          <div><p className="product-label">Para clientes, equipes e parceiros</p><h3>Empresas</h3><p>Presentes corporativos, coffee breaks em Chapecó e experiências para reconhecer pessoas e fortalecer relações.</p></div>
-          <a className="button button-dark" href={whatsapp.corporate} target="_blank" rel="noreferrer">Conhecer opções corporativas <span aria-hidden="true">→</span></a>
+          <div><p className="product-label">Para clientes, equipes e parceiros</p><h3>Empresas</h3><p>Presentes corporativos, coffee breaks e experiências para reconhecer pessoas e fortalecer relações profissionais.</p></div>
+          <a className="button button-dark" href={corporatePage}>Ver soluções para empresas <span aria-hidden="true">→</span></a>
         </article>
         <div className="commercial-info" aria-label="Preço, prazo e entrega">
           <div className="price-highlight"><span>Experiências</span><strong>a partir de R$ 95</strong></div>
@@ -179,7 +183,7 @@ export default function Home() {
       <footer>
         <div className="footer-brand"><BrandMark /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div>
         <div className="footer-contact"><strong>Chapecó e região</strong><a href={whatsapp.order} target="_blank" rel="noreferrer">WhatsApp: (49) 99944-2478</a><span>Pedidos preferencialmente com 24h de antecedência.</span></div>
-        <div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp</a><a href={instagramUrl} target="_blank" rel="noreferrer">Siga a GB no Instagram · @gabi.gbgrazingfoods <span aria-hidden="true">↗</span></a></div>
+        <div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp</a><a href={eventsPage}>Grazing tables e eventos</a><a href={corporatePage}>Presentes corporativos</a><a href={coffeeBreakPage}>Coffee break</a><a href={instagramUrl} target="_blank" rel="noreferrer">Siga a GB no Instagram · @gabi.gbgrazingfoods <span aria-hidden="true">↗</span></a></div>
       </footer>
 
       <a className="whatsapp-float" href={whatsapp.information} target="_blank" rel="noreferrer" aria-label="Fale com a Gabi pelo WhatsApp" title="Fale com a Gabi pelo WhatsApp"><span className="whatsapp-float-icon"><WhatsAppIcon /></span><span className="whatsapp-float-label">Fale com a Gabi</span></a>
