@@ -102,7 +102,7 @@ export default function Page() {
       <div className="care-image"><img src="/images/gb-presentes.webp" alt="Cesta de café da manhã preparada sob encomenda para presentear" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>afeto</strong></div></div>
       <div className="care-copy"><p className="eyebrow">Cesta de café da manhã sob encomenda</p><h2 id="opcoes-title">Uma opção preparada para a pessoa e para o momento</h2><p className="hero-description">As cestas são preparadas sob encomenda, com seleção de produtos e apresentação pensada para presentear. A composição e as possibilidades são orientadas diretamente pela Gabi conforme a ocasião, a disponibilidade e a antecedência.</p><ol>
         <li><span>1</span><div><h3>Conte quem vai receber</h3><p>Informe a ocasião, a pessoa presenteada, a data desejada e onde será feita a entrega.</p></div></li>
-        <li><span>2</span><div><h3>Conheça as possibilidades disponíveis</h3><p>A Gabi orienta formatos, sabores e detalhes que façam sentido para o pedido, sem trabalhar com um catálogo rígido.</p></div></li>
+        <li><span>2</span><div><h3>Conheça as possibilidades disponíveis</h3><p>A Gabi orienta formatos, sabores e detalhes que façam sentido para o pedido, conforme as opções disponíveis para a data.</p></div></li>
       </ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções disponíveis <span aria-hidden="true">→</span></a><p className="whatsapp-microcopy">WhatsApp · Atendimento pessoal pela Gabi</p></div>
     </section>
 
