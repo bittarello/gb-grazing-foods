@@ -3,46 +3,41 @@ const instagramUrl = "https://www.instagram.com/gabi.gbgrazingfoods/";
 const whatsappNumber = "5549999442478";
 const breakfastPage = "/cestas-de-cafe-da-manha-chapeco/";
 const boardsPage = "/tabuas-de-frios-chapeco/";
+const giftsPage = "/presentes-gastronomicos-chapeco/";
 const eventsPage = "/grazing-table-chapeco/";
 const corporatePage = "/presentes-corporativos-chapeco/";
 const coffeeBreakPage = "/coffee-break-chapeco/";
 
 const messages = {
   order: "Olá Gabi! Vim pelo site da GB Grazing Foods e gostaria de fazer um pedido. Pode me ajudar?",
-  gift: "Olá Gabi! Vim pelo site da GB e estou procurando uma opção especial para presentear. Pode me mostrar as opções?",
-  boards: "Olá Gabi! Vim pelo site da GB e gostaria de conhecer as opções de tábuas de frios para compartilhar.",
-  breakfast: "Olá Gabi! Vim pelo site da GB e gostaria de conhecer as opções de cestas de café da manhã.",
-  event: "Olá Gabi! Vim pelo site da GB e gostaria de informações para uma comemoração ou evento.",
-  corporate: "Olá Gabi! Vim pelo site da GB e gostaria de conhecer as opções de presentes, coffee breaks e experiências corporativas.",
   information: "Olá Gabi! Vim pelo site da GB Grazing Foods e gostaria de mais informações.",
 };
 
 const whatsappLink = (message: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 const whatsapp = {
-  order: whatsappLink(messages.order), gift: whatsappLink(messages.gift), boards: whatsappLink(messages.boards),
-  breakfast: whatsappLink(messages.breakfast), event: whatsappLink(messages.event),
-  corporate: whatsappLink(messages.corporate), information: whatsappLink(messages.information),
+  order: whatsappLink(messages.order),
+  information: whatsappLink(messages.information),
 };
 
 const occasions = [
-  { number: "01", title: "Presentear", text: "Cestas de café da manhã, boxes e mimos para aniversários, agradecimentos e todo gesto que merece cuidado.", image: "/images/gb-presentes.webp", alt: "Cesta de café da manhã artesanal preparada em Chapecó", cta: "Ver cestas de café da manhã", href: breakfastPage },
-  { number: "02", title: "Compartilhar", text: "Tábuas de frios para casal, amigos e família, noites de vinho e aquele encontro especial.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Ver tábuas de frios", href: boardsPage },
-  { number: "03", title: "Celebrar", text: "Grazing tables e mesas gastronômicas para aniversários, recepções, comemorações e encontros especiais.", image: "/images/gb-eventos.webp", alt: "Mesa gastronômica preparada para uma celebração", cta: "Ver mesas para eventos", href: eventsPage },
+  { number: "01", title: "Presentear", text: "Cestas de café da manhã e presentes gastronômicos para aniversários, agradecimentos e datas especiais.", image: "/images/gb-presentes.webp", alt: "Presente gastronômico artesanal preparado em Chapecó", cta: "Ver presentes gastronômicos", href: giftsPage },
+  { number: "02", title: "Compartilhar", text: "Tábuas de frios sob encomenda para casal, amigos, família e encontros especiais.", image: "/images/gb-hero.webp", alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos", cta: "Ver tábuas de frios", href: boardsPage },
+  { number: "03", title: "Celebrar", text: "Grazing tables e montagens gastronômicas para aniversários, recepções e celebrações.", image: "/images/gb-eventos.webp", alt: "Mesa gastronômica preparada para uma celebração", cta: "Ver mesas para eventos", href: eventsPage },
 ];
 
-const products = [
-  { label: "Cestas de café da manhã", title: "Café da Manhã Afeto", text: "Um presente gastronômico que chega cedo e transforma o primeiro momento do dia.", cta: "Ver opções de café da manhã", href: breakfastPage },
-  { label: "Para brindar a dois", title: "Noite de Vinhos", text: "Sabores selecionados para uma noite sem pressa, cheia de conversa e presença.", cta: "Ver tábuas de frios", href: boardsPage },
-  { label: "Tábuas de frios", title: "Tábua para Compartilhar", text: "Uma composição generosa para casal, amigos ou família receberem bem e criarem boas memórias.", cta: "Conhecer tábuas de frios", href: boardsPage },
-  { label: "Presentes corporativos", title: "Experiências Corporativas", text: "Presentes e experiências para reconhecer clientes, equipes e parceiros.", cta: "Ver presentes corporativos", href: corporatePage },
-  { label: "Coffee break", title: "Coffee Break para Reuniões", text: "Opções para reuniões, treinamentos e encontros corporativos, orientadas conforme quantidade e formato.", cta: "Conhecer coffee break", href: coffeeBreakPage },
+const services = [
+  { label: "Presentear logo cedo", title: "Cestas de café da manhã", text: "Cestas sob encomenda para aniversários, agradecimentos, comemorações e outras datas especiais.", cta: "Ver cestas de café da manhã", href: breakfastPage },
+  { label: "Presentes para diferentes ocasiões", title: "Presentes gastronômicos", text: "Boxes, cestas e outras possibilidades para presentear, conforme a ocasião e a disponibilidade.", cta: "Ver presentes gastronômicos", href: giftsPage },
+  { label: "Para compartilhar", title: "Tábuas de frios", text: "Queijos, embutidos, acompanhamentos e itens selecionados em composições sob encomenda.", cta: "Ver tábuas de frios", href: boardsPage },
+  { label: "Para empresas", title: "Presentes corporativos", text: "Opções personalizadas para clientes, equipes, parceiros e ações de relacionamento.", cta: "Ver presentes corporativos", href: corporatePage },
+  { label: "Reuniões e treinamentos", title: "Coffee break", text: "Coffee break sob encomenda para reuniões, treinamentos, eventos e encontros corporativos.", cta: "Ver coffee break", href: coffeeBreakPage },
 ];
 
 const faqs = [
   { question: "Com quanta antecedência devo fazer o pedido?", answer: "Os pedidos devem ser feitos preferencialmente com 24 horas de antecedência, conforme disponibilidade. Para eventos e pedidos corporativos, quanto antes conversarmos, melhor." },
   { question: "Onde a GB realiza entregas?", answer: "Entregamos em Chapecó e região. Consulte a disponibilidade e a taxa de entrega conforme o endereço." },
-  { question: "É possível personalizar?", answer: "Sim. Conte para a Gabi quem vai receber, qual é a ocasião e o que você imaginou. Cada experiência é orientada pessoalmente, conforme o produto e a antecedência." },
-  { question: "A GB atende empresas e eventos?", answer: "Sim. Preparamos presentes corporativos, coffee breaks em Chapecó, kits para reuniões e mesas gastronômicas para encontros e celebrações." },
+  { question: "É possível personalizar?", answer: "Sim. Conte para a Gabi quem vai receber, qual é a ocasião e o que você imaginou. As possibilidades são orientadas conforme a opção escolhida e a antecedência." },
+  { question: "A GB atende empresas e eventos?", answer: "Sim. A GB prepara presentes corporativos, coffee break e montagens gastronômicas para eventos, conforme quantidade, prazo, agenda e disponibilidade." },
 ];
 
 function BrandMark() {
@@ -93,13 +88,13 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">Cestas, tábuas e presentes em Chapecó e região</p>
           <h1 id="hero-title">O sabor fica.<br /><em>O gesto também.</em></h1>
-          <p className="hero-description">Cestas de café da manhã, tábuas de frios, presentes especiais e experiências gastronômicas preparadas pela Gabi para presentear, compartilhar e celebrar.</p>
+          <p className="hero-description">Cestas de café da manhã, tábuas de frios, presentes gastronômicos, coffee break e experiências para eventos preparados pela Gabi para presentear, compartilhar e celebrar.</p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer um pedido pelo WhatsApp <span aria-hidden="true">→</span></a>
             <a className="text-link" href={breakfastPage}>Ver cestas de café da manhã</a>
           </div>
           <p className="order-note">Atendimento pessoal pela Gabi · Pedidos conforme disponibilidade</p>
-          <div className="hero-proof" aria-label="Informações comerciais da GB"><span>Opções a partir de R$ 95</span><span>Produção artesanal</span><span>Entregas em Chapecó e região</span></div>
+          <div className="hero-proof" aria-label="Informações comerciais da GB"><span>Produção artesanal</span><span>Sob encomenda</span><span>Entregas em Chapecó e região</span></div>
         </div>
         <figure className="hero-visual">
           <img src="/images/gb-hero.webp" alt="Tábua de frios artesanal com queijos, frutas, pães e embutidos" width="1587" height="991" fetchPriority="high" decoding="async" />
@@ -112,51 +107,45 @@ export default function Home() {
       <section className="section occasions-section" id="ocasioes">
         <div className="section-heading">
           <div><p className="eyebrow">Escolha sua experiência</p><h2>Para cada momento,<br />um jeito de encantar.</h2></div>
-          <p>Você escolhe a ocasião. A Gabi orienta pessoalmente as opções, sabores e detalhes para que tudo chegue com significado.</p>
+          <p>Você escolhe a ocasião. A Gabi orienta pessoalmente as opções e os detalhes conforme disponibilidade e antecedência.</p>
         </div>
         <div className="occasion-grid">
-          {occasions.map((occasion) => {
-            const opensWhatsApp = occasion.href.startsWith("https://wa.me/");
-            return <article className="occasion-card" key={occasion.title}>
-              <div className="occasion-image"><img src={occasion.image} alt={occasion.alt} loading="lazy" decoding="async" /><span>{occasion.number}</span></div>
-              <h3>{occasion.title}</h3><p>{occasion.text}</p>
-              <a href={occasion.href} target={opensWhatsApp ? "_blank" : undefined} rel={opensWhatsApp ? "noreferrer" : undefined} aria-label={opensWhatsApp ? `${occasion.cta} pelo WhatsApp` : occasion.cta}>{occasion.cta} <span aria-hidden="true">→</span></a>
-            </article>;
-          })}
+          {occasions.map((occasion) => <article className="occasion-card" key={occasion.title}>
+            <div className="occasion-image"><img src={occasion.image} alt={occasion.alt} loading="lazy" decoding="async" /><span>{occasion.number}</span></div>
+            <h3>{occasion.title}</h3><p>{occasion.text}</p>
+            <a href={occasion.href}>{occasion.cta} <span aria-hidden="true">→</span></a>
+          </article>)}
         </div>
         <article className="corporate-strip">
           <div className="corporate-number">04</div>
-          <div><p className="product-label">Para clientes, equipes e parceiros</p><h3>Empresas</h3><p>Presentes corporativos, coffee breaks e experiências para reconhecer pessoas e fortalecer relações profissionais.</p></div>
+          <div><p className="product-label">Para clientes, equipes e parceiros</p><h3>Empresas</h3><p>Presentes corporativos e coffee break para ações de relacionamento, reuniões, treinamentos e encontros profissionais.</p></div>
           <a className="button button-dark" href={corporatePage}>Ver soluções para empresas <span aria-hidden="true">→</span></a>
         </article>
-        <div className="commercial-info" aria-label="Preço, prazo e entrega">
-          <div className="price-highlight"><span>Experiências</span><strong>a partir de R$ 95</strong></div>
-          <div className="commercial-detail"><span>Prazo</span><p>Pedidos preferencialmente com 24 horas de antecedência, conforme disponibilidade.</p></div>
+        <div className="commercial-info" aria-label="Prazo, atendimento e entrega">
+          <div className="price-highlight"><span>Atendimento</span><strong>sob encomenda</strong></div>
+          <div className="commercial-detail"><span>Prazo</span><p>Pedidos preferencialmente com 24 horas de antecedência, conforme disponibilidade. Eventos e empresas devem consultar agenda.</p></div>
           <div className="commercial-detail"><span>Entrega</span><p>Entregas em Chapecó e região. Consulte disponibilidade e taxa conforme o endereço.</p></div>
         </div>
       </section>
 
       <section className="section experiences-section" id="experiencias">
-        <div className="experiences-intro"><p className="eyebrow light">Opções concretas para comprar</p><h2>Comece pelo que<br /><em>você quer fazer sentir.</em></h2><p>Há opções individuais, para duas pessoas e composições maiores. Fale diretamente com a Gabi para conhecer o cardápio disponível.</p></div>
+        <div className="experiences-intro"><p className="eyebrow light">Serviços da GB</p><h2>Escolha pelo que<br /><em>você precisa para o momento.</em></h2><p>Cada serviço tem uma página própria com informações de ocasião, pedido, prazo e atendimento.</p></div>
         <div className="product-list">
-          {products.map((product, index) => {
-            const opensWhatsApp = product.href.startsWith("https://wa.me/");
-            return <article className="product-item" key={product.title}>
-              <span className="product-index">0{index + 1}</span>
-              <div><p className="product-label">{product.label}</p><h3>{product.title}</h3><p>{product.text}</p><a className="product-cta" href={product.href} target={opensWhatsApp ? "_blank" : undefined} rel={opensWhatsApp ? "noreferrer" : undefined}>{product.cta} <span aria-hidden="true">→</span></a></div>
-            </article>;
-          })}
+          {services.map((service, index) => <article className="product-item" key={service.title}>
+            <span className="product-index">0{index + 1}</span>
+            <div><p className="product-label">{service.label}</p><h3>{service.title}</h3><p>{service.text}</p><a className="product-cta" href={service.href}>{service.cta} <span aria-hidden="true">→</span></a></div>
+          </article>)}
         </div>
       </section>
 
       <section className="section care-section" id="como-pedir">
         <div className="care-image"><img src="/images/gb-presentes.webp" alt="Cesta de café da manhã artesanal com frutas, pães e flores" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>afeto</strong></div></div>
         <div className="care-copy">
-          <p className="eyebrow">Como fazer seu pedido</p><h2>Seu presente começa com uma conversa.</h2>
+          <p className="eyebrow">Como fazer seu pedido</p><h2>Seu pedido começa com uma conversa.</h2>
           <ol>
-            <li><span>1</span><div><h3>Conte o momento</h3><p>Quem vai receber, qual é a ocasião e quando você precisa.</p></div></li>
-            <li><span>2</span><div><h3>Escolha com a Gabi</h3><p>Pelo WhatsApp, você recebe orientação sobre formatos, sabores, valores e detalhes.</p></div></li>
-            <li><span>3</span><div><h3>Confirme e aguarde o encanto</h3><p>A GB prepara tudo artesanalmente e combina a entrega em Chapecó e região.</p></div></li>
+            <li><span>1</span><div><h3>Conte o momento</h3><p>Quem vai receber, qual é a ocasião, quantas pessoas participarão e quando você precisa.</p></div></li>
+            <li><span>2</span><div><h3>Conheça as possibilidades</h3><p>Pelo WhatsApp, a Gabi orienta as opções e os detalhes disponíveis para o pedido.</p></div></li>
+            <li><span>3</span><div><h3>Confirme os detalhes</h3><p>Combine prazo, endereço, disponibilidade e demais informações do atendimento.</p></div></li>
           </ol>
           <a className="button button-primary" href={whatsapp.order} target="_blank" rel="noreferrer">Quero encomendar <span aria-hidden="true">→</span></a>
           <p className="whatsapp-microcopy">WhatsApp · Atendimento pessoal pela Gabi</p>
@@ -175,15 +164,15 @@ export default function Home() {
       </section>
 
       <section className="final-cta">
-        <p className="eyebrow light">Tem um momento especial chegando?</p><h2>Conte para a Gabi.<br /><em>Ela transforma em experiência.</em></h2>
-        <p>Cestas, tábuas, presentes e experiências gastronômicas em Chapecó e região, com opções a partir de R$ 95.</p>
+        <p className="eyebrow light">Tem um momento especial chegando?</p><h2>Conte para a Gabi.<br /><em>Ela ajuda você a escolher.</em></h2>
+        <p>Cestas, tábuas, presentes e experiências gastronômicas em Chapecó e região, conforme disponibilidade.</p>
         <a className="button button-light" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp <span aria-hidden="true">→</span></a>
       </section>
 
       <footer>
         <div className="footer-brand"><BrandMark /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div>
         <div className="footer-contact"><strong>Chapecó e região</strong><a href={whatsapp.order} target="_blank" rel="noreferrer">WhatsApp: (49) 99944-2478</a><span>Pedidos preferencialmente com 24h de antecedência.</span></div>
-        <div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp</a><a href={eventsPage}>Grazing tables e eventos</a><a href={corporatePage}>Presentes corporativos</a><a href={coffeeBreakPage}>Coffee break</a><a href={instagramUrl} target="_blank" rel="noreferrer">Siga a GB no Instagram · @gabi.gbgrazingfoods <span aria-hidden="true">↗</span></a></div>
+        <div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp.order} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp</a><a href={breakfastPage}>Cestas de café da manhã</a><a href={boardsPage}>Tábuas de frios</a><a href={giftsPage}>Presentes gastronômicos</a><a href={eventsPage}>Grazing tables e eventos</a><a href={corporatePage}>Presentes corporativos</a><a href={coffeeBreakPage}>Coffee break</a><a href={instagramUrl} target="_blank" rel="noreferrer">Siga a GB no Instagram · @gabi.gbgrazingfoods <span aria-hidden="true">↗</span></a></div>
       </footer>
 
       <a className="whatsapp-float" href={whatsapp.information} target="_blank" rel="noreferrer" aria-label="Fale com a Gabi pelo WhatsApp" title="Fale com a Gabi pelo WhatsApp"><span className="whatsapp-float-icon"><WhatsAppIcon /></span><span className="whatsapp-float-label">Fale com a Gabi</span></a>
