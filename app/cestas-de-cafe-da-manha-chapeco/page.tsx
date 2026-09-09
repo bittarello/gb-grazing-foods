@@ -5,16 +5,16 @@ const siteUrl = "https://gbgrazingfoods.com.br";
 const path = "/cestas-de-cafe-da-manha-chapeco/";
 const pageUrl = `${siteUrl}${path}`;
 const whatsappNumber = "5549999442478";
-const whatsappMessage = "Olá Gabi! Vi a página de cestas de café da manhã da GB e gostaria de conhecer as opções disponíveis.";
+const whatsappMessage = "Olá Gabi! Vi as cestas de café da manhã no site da GB e gostaria de conhecer as opções disponíveis para entrega em Chapecó.";
 const whatsapp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 export const metadata: Metadata = {
   title: "Cestas de Café da Manhã em Chapecó | GB Grazing Foods",
-  description: "Cestas de café da manhã artesanais em Chapecó para aniversários, agradecimentos e outras ocasiões especiais. Consulte as opções e combine a entrega pelo WhatsApp.",
+  description: "Cestas de café da manhã sob encomenda com entrega agendada em Chapecó e região. Para aniversários, agradecimentos e momentos especiais. Consulte pelo WhatsApp.",
   alternates: { canonical: path },
   openGraph: {
     title: "Cestas de Café da Manhã em Chapecó | GB Grazing Foods",
-    description: "Cestas de café da manhã artesanais em Chapecó para aniversários, agradecimentos e outras ocasiões especiais. Consulte as opções e combine a entrega pelo WhatsApp.",
+    description: "Cestas de café da manhã sob encomenda com entrega agendada em Chapecó e região. Para aniversários, agradecimentos e momentos especiais. Consulte pelo WhatsApp.",
     url: path,
     siteName: "GB Grazing Foods",
     type: "website",
@@ -25,16 +25,17 @@ export const metadata: Metadata = {
 
 const moments = [
   ["Aniversários", "Uma forma carinhosa de começar o aniversário de alguém importante."],
-  ["Momentos a dois", "Um convite para desacelerar e compartilhar o começo do dia com mais presença."],
-  ["Agradecimentos", "Um presente delicado para reconhecer um gesto, uma parceria ou uma pessoa especial."],
-  ["Datas especiais", "Uma opção para comemorações e surpresas em que o cuidado faz parte do presente."],
+  ["Agradecimentos", "Uma cesta de presente para reconhecer um gesto, uma parceria ou uma pessoa especial."],
+  ["Comemorações", "Uma opção para celebrar conquistas, reencontros e momentos que merecem cuidado."],
+  ["Datas especiais", "Um presente gastronômico para surpreender mesmo quando a ocasião pede algo simples e afetivo."],
 ];
 
 const faqs = [
-  ["Vocês entregam cestas de café da manhã em Chapecó?", "Sim. A GB realiza entregas em Chapecó e região. A disponibilidade e a taxa de entrega são consultadas conforme o endereço."],
-  ["Com quanto tempo de antecedência devo fazer o pedido?", "Os pedidos devem ser feitos preferencialmente com 24 horas de antecedência, conforme disponibilidade."],
-  ["É possível personalizar?", "Sim. Conte para a Gabi quem vai receber, qual é a ocasião e o que você imaginou. A orientação é feita pessoalmente, conforme o produto e a antecedência."],
-  ["Como faço meu pedido?", "Fale diretamente com a Gabi pelo WhatsApp, conte o momento e consulte as opções disponíveis. Depois, combine os detalhes e confirme a entrega."],
+  ["Vocês entregam cestas de café da manhã em Chapecó?", "Sim. A GB realiza entrega agendada de cestas em Chapecó e região. A disponibilidade e a taxa são consultadas conforme o endereço."],
+  ["É necessário encomendar com antecedência?", "Os pedidos devem ser feitos preferencialmente com 24 horas de antecedência, conforme disponibilidade. Horários especiais podem ser combinados antecipadamente."],
+  ["É possível personalizar a cesta?", "Sim. Conte para a Gabi quem vai receber, qual é a ocasião e o que você imaginou. As possibilidades são orientadas conforme a cesta, a disponibilidade e a antecedência."],
+  ["Como funciona a entrega?", "Informe o endereço e a data desejada no atendimento. A Gabi confirma disponibilidade, taxa e o melhor horário para a entrega agendada."],
+  ["Como faço meu pedido?", "Fale diretamente com a Gabi pelo WhatsApp, conte o momento, consulte as opções disponíveis e combine os detalhes da entrega."],
 ];
 
 function Brand() {
@@ -49,71 +50,85 @@ export default function Page() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", name: "Cestas de Café da Manhã em Chapecó | GB Grazing Foods", description: "Cestas de café da manhã artesanais para presentear em Chapecó e região.", url: pageUrl, inLanguage: "pt-BR", isPartOf: { "@type": "WebSite", name: "GB Grazing Foods", url: `${siteUrl}/` } },
-      { "@type": "BreadcrumbList", itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: `${siteUrl}/` },
-        { "@type": "ListItem", position: 2, name: "Cestas de café da manhã", item: pageUrl },
-      ] },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        name: "Cestas de Café da Manhã em Chapecó | GB Grazing Foods",
+        description: "Cestas de café da manhã sob encomenda com entrega agendada em Chapecó e região.",
+        url: pageUrl,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#organization` },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Início", item: `${siteUrl}/` },
+          { "@type": "ListItem", position: 2, name: "Cestas de café da manhã", item: pageUrl },
+        ],
+      },
     ],
   };
 
   return <main id="inicio">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <div className="top-note"><span>Entregas em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Pedidos preferencialmente com 24h</span></div>
+    <div className="top-note"><span>Entrega agendada em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Cestas preparadas sob encomenda</span></div>
 
     <header className="site-header">
       <Brand />
-      <nav aria-label="Navegação da página"><Link href="/">Início</Link><a href="#momentos">Momentos</a><a href="#como-encomendar">Como pedir</a><a href="#duvidas">Dúvidas</a></nav>
+      <nav aria-label="Navegação da página"><Link href="/">Início</Link><a href="#momentos">Ocasiões</a><a href="#como-encomendar">Como pedir</a><a href="#duvidas">Dúvidas</a></nav>
       <a className="button button-small button-outline header-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">↗</span></a>
     </header>
 
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="eyebrow">Presentes artesanais com entrega em Chapecó e região</p>
-        <h1 id="hero-title">Cestas de café da manhã em Chapecó<br /><em>para transformar carinho em presente</em></h1>
-        <p className="hero-description">A GB prepara cestas para aniversários, agradecimentos e outras ocasiões especiais, com atendimento pessoal pela Gabi e entrega combinada conforme o endereço.</p>
-        <div className="hero-actions"><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Conhecer opções pelo WhatsApp <span aria-hidden="true">→</span></a><a className="text-link" href="#opcoes">Entender como funciona</a></div>
-        <p className="order-note">Atendimento pessoal pela Gabi · Pedidos conforme disponibilidade</p>
-        <div className="hero-proof"><span>Produção artesanal</span><span>Atendimento pessoal</span><span>Chapecó e região</span></div>
+        <p className="eyebrow">Cestas sob encomenda com entrega em Chapecó e região</p>
+        <h1 id="hero-title">Cestas de café da manhã em Chapecó<br /><em>para presentear com carinho</em></h1>
+        <p className="hero-description">A GB prepara cestas de café da manhã sob encomenda para aniversários, agradecimentos, comemorações e outras datas especiais, com atendimento pessoal pela Gabi e entrega agendada conforme o endereço.</p>
+        <div className="hero-actions"><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Conhecer opções pelo WhatsApp <span aria-hidden="true">→</span></a><a className="text-link" href="#opcoes">Conhecer a proposta</a></div>
+        <p className="order-note">Atendimento pessoal pela Gabi · Opções conforme disponibilidade</p>
+        <div className="hero-proof"><span>Sob encomenda</span><span>Produção artesanal</span><span>Entrega agendada</span></div>
       </div>
       <figure className="hero-visual"><img src="/images/gb-presentes.webp" alt="Cesta de café da manhã artesanal com frutas, pães e flores" width="1254" height="1254" fetchPriority="high" decoding="async" /><figcaption><span>01</span>Feito para presentear</figcaption></figure>
     </section>
 
     <section className="section occasions-section" aria-labelledby="presente-title">
-      <div className="section-heading"><div><p className="eyebrow">Um gesto que chega logo cedo</p><h2 id="presente-title">Um presente para começar o dia de um jeito especial</h2></div><p>Para um aniversário, um agradecimento ou uma surpresa sem data marcada, a cesta transforma o começo do dia em um gesto de cuidado. A proposta da GB é ajudar você a escolher uma opção que combine com a pessoa e com o momento.</p></div>
+      <div className="section-heading"><div><p className="eyebrow">Uma cesta para cada ocasião</p><h2 id="presente-title">Aniversários, agradecimentos, comemorações e surpresas</h2></div><p>Uma cesta de café da manhã pode marcar o começo de um aniversário, agradecer alguém importante ou transformar uma data comum em um gesto especial. A Gabi orienta as possibilidades de acordo com a pessoa, a ocasião e a antecedência.</p></div>
     </section>
 
     <section className="section care-section" id="opcoes" aria-labelledby="opcoes-title">
-      <div className="care-image"><img src="/images/gb-presentes.webp" alt="Cesta artesanal preparada para presentear" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>afeto</strong></div></div>
-      <div className="care-copy"><p className="eyebrow">Escolha com orientação pessoal</p><h2 id="opcoes-title">Encontre uma cesta para o seu momento</h2><ol>
-        <li><span>1</span><div><h3>Conte quem vai receber</h3><p>Fale sobre a ocasião, a pessoa presenteada e quando você gostaria de fazer a entrega.</p></div></li>
-        <li><span>2</span><div><h3>Conheça as opções disponíveis</h3><p>A Gabi orienta sobre formatos, sabores, valores e detalhes que façam sentido para o pedido.</p></div></li>
+      <div className="care-image"><img src="/images/gb-presentes.webp" alt="Cesta de café da manhã preparada sob encomenda para presentear" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>afeto</strong></div></div>
+      <div className="care-copy"><p className="eyebrow">Cesta de café da manhã sob encomenda</p><h2 id="opcoes-title">Uma opção preparada para a pessoa e para o momento</h2><p className="hero-description">As cestas são preparadas sob encomenda, com seleção de produtos e apresentação pensada para presentear. A composição e as possibilidades são orientadas diretamente pela Gabi conforme a ocasião, a disponibilidade e a antecedência.</p><ol>
+        <li><span>1</span><div><h3>Conte quem vai receber</h3><p>Informe a ocasião, a pessoa presenteada, a data desejada e onde será feita a entrega.</p></div></li>
+        <li><span>2</span><div><h3>Conheça as possibilidades disponíveis</h3><p>A Gabi orienta formatos, sabores e detalhes que façam sentido para o pedido, sem trabalhar com um catálogo rígido.</p></div></li>
       </ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções disponíveis <span aria-hidden="true">→</span></a><p className="whatsapp-microcopy">WhatsApp · Atendimento pessoal pela Gabi</p></div>
     </section>
 
     <section className="section experiences-section" id="momentos" aria-labelledby="momentos-title">
-      <div className="experiences-intro"><p className="eyebrow light">Ideias para presentear</p><h2 id="momentos-title">Quando uma cesta de café da manhã faz sentido?</h2><p>Há momentos em que o presente precisa dizer mais do que uma mensagem. A escolha pode ser simples, afetiva e adequada à ocasião.</p></div>
-      <div className="product-list">{moments.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Momento especial</p><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+      <div className="experiences-intro"><p className="eyebrow light">Cestas de presente para diferentes momentos</p><h2 id="momentos-title">Quando uma cesta de café da manhã faz sentido?</h2><p>Para quem procura uma cesta de presente em Chapecó, o café da manhã é uma opção afetiva e versátil para diferentes ocasiões.</p></div>
+      <div className="product-list">{moments.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Momento para presentear</p><h3>{title}</h3><p>{text}</p></div></article>)}</div>
     </section>
 
     <section className="section occasions-section" aria-labelledby="artesanal-title">
-      <div className="section-heading"><div><p className="eyebrow">Cuidado em cada montagem</p><h2 id="artesanal-title">Detalhes que fazem parte do presente</h2></div><p>A experiência começa na conversa e continua na montagem. A GB trabalha de forma artesanal, com atenção à apresentação e aos detalhes que podem ser combinados conforme a opção escolhida e a antecedência.</p></div>
+      <div className="section-heading"><div><p className="eyebrow">O cuidado faz parte do presente</p><h2 id="artesanal-title">Preparação artesanal e atendimento pessoal</h2></div><p>A experiência começa na conversa e continua na montagem. A GB trabalha de forma artesanal, com atenção à apresentação e aos detalhes que podem ser combinados conforme a opção escolhida e a antecedência.</p></div>
       <div className="occasion-grid">
-        <article className="occasion-card"><h3>Cuidado</h3><p>O pedido começa entendendo quem vai receber e qual é a ocasião.</p></article>
-        <article className="occasion-card"><h3>Apresentação</h3><p>A montagem ajuda a transformar alimentos e detalhes em um presente com intenção.</p></article>
-        <article className="occasion-card"><h3>Preparação artesanal</h3><p>Cada pedido é preparado conforme as opções disponíveis e os detalhes combinados.</p></article>
+        <article className="occasion-card"><h3>Ocasião</h3><p>O pedido começa entendendo quem vai receber e o que você quer expressar com o presente.</p></article>
+        <article className="occasion-card"><h3>Apresentação</h3><p>A montagem ajuda a transformar a seleção de produtos em uma experiência de presente.</p></article>
+        <article className="occasion-card"><h3>Preparação sob encomenda</h3><p>Cada pedido é preparado conforme as opções disponíveis e os detalhes combinados.</p></article>
         <article className="occasion-card"><h3>Atendimento pessoal</h3><p>A orientação do pedido é feita diretamente com a Gabi pelo WhatsApp.</p></article>
       </div>
     </section>
 
     <section className="section occasions-section" aria-labelledby="entrega-title">
-      <div className="section-heading"><div><p className="eyebrow">Entrega combinada com você</p><h2 id="entrega-title">Como funciona a entrega</h2></div><p>A GB realiza entregas em Chapecó e região. Informe o endereço no atendimento para consultar disponibilidade, taxa e o melhor horário para o pedido.</p></div>
-      <div className="commercial-info"><div className="price-highlight"><span>Região atendida</span><strong>Chapecó e região</strong></div><div className="commercial-detail"><span>Disponibilidade e taxa</span><p>Consulte as condições de entrega conforme o endereço.</p></div><div className="commercial-detail"><span>Antecedência</span><p>Pedidos preferencialmente com 24 horas de antecedência, conforme disponibilidade.</p></div></div>
+      <div className="section-heading"><div><p className="eyebrow">Entrega agendada</p><h2 id="entrega-title">Entrega de cestas em Chapecó e região</h2></div><p>A GB realiza entrega agendada de cestas em Chapecó e cidades da região atendidas. Informe o endereço e a data no atendimento para consultar disponibilidade, taxa e o melhor horário para o pedido.</p></div>
+      <div className="commercial-info"><div className="price-highlight"><span>Região atendida</span><strong>Chapecó e região</strong></div><div className="commercial-detail"><span>Disponibilidade e taxa</span><p>As condições de entrega são consultadas conforme o endereço.</p></div><div className="commercial-detail"><span>Antecedência</span><p>Pedidos preferencialmente com 24 horas de antecedência. Horários especiais podem ser combinados antecipadamente.</p></div></div>
     </section>
 
     <section className="section care-section" id="como-encomendar" aria-labelledby="como-title">
-      <div className="care-copy"><p className="eyebrow">Seu pedido começa com uma conversa</p><h2 id="como-title">Como encomendar sua cesta</h2><p className="hero-description">Fale diretamente com a Gabi para conhecer o que está disponível e combinar os detalhes do presente.</p><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp <span aria-hidden="true">→</span></a></div>
-      <div className="care-copy"><ol><li><span>1</span><div><h3>Conte o momento</h3><p>Diga quem vai receber, qual é a ocasião e quando você precisa.</p></div></li><li><span>2</span><div><h3>Escolha com a Gabi</h3><p>Conheça as opções disponíveis e receba orientação sobre os detalhes.</p></div></li><li><span>3</span><div><h3>Confirme a entrega</h3><p>Informe o endereço e combine disponibilidade, taxa e demais informações do pedido.</p></div></li></ol></div>
+      <div className="care-copy"><p className="eyebrow">Seu pedido começa com uma conversa</p><h2 id="como-title">Como encomendar sua cesta</h2><p className="hero-description">Fale diretamente com a Gabi para conhecer o que está disponível e combinar os detalhes do presente e da entrega.</p><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp <span aria-hidden="true">→</span></a></div>
+      <div className="care-copy"><ol><li><span>1</span><div><h3>Conte a ocasião</h3><p>Diga quem vai receber, qual é o momento e quando você precisa.</p></div></li><li><span>2</span><div><h3>Escolha com a Gabi</h3><p>Conheça as opções disponíveis e receba orientação sobre os detalhes da cesta.</p></div></li><li><span>3</span><div><h3>Agende a entrega</h3><p>Informe o endereço e combine disponibilidade, taxa, data e horário.</p></div></li></ol></div>
     </section>
 
     <section className="section faq-section" id="duvidas" aria-labelledby="duvidas-title">
@@ -121,9 +136,9 @@ export default function Page() {
       <div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
     </section>
 
-    <section className="final-cta"><p className="eyebrow light">Quer transformar carinho em presente?</p><h2>Converse com a Gabi.<br /><em>Escolha uma opção para esse momento.</em></h2><p>Atendimento pessoal, produção artesanal e entrega em Chapecó e região conforme disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">→</span></a></section>
+    <section className="final-cta"><p className="eyebrow light">Quer enviar uma cesta de presente?</p><h2>Converse com a Gabi.<br /><em>Encontre uma opção para esse momento.</em></h2><p>Cestas de café da manhã sob encomenda e entrega agendada em Chapecó e região, conforme disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">→</span></a></section>
 
-    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Pedidos preferencialmente com 24h de antecedência.</span></div><div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções pelo WhatsApp</a><Link href="/tabuas-de-frios-chapeco/">Ver tábuas de frios</Link><Link href="/">Voltar para a página inicial</Link></div></footer>
+    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Cestas sob encomenda · Entrega agendada conforme disponibilidade.</span></div><div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções pelo WhatsApp</a><Link href="/tabuas-de-frios-chapeco/">Conheça nossas tábuas de frios</Link><Link href="/presentes-corporativos-chapeco/">Presentes para empresas</Link><Link href="/">Voltar para a página inicial</Link></div></footer>
 
     <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Consultar cestas de café da manhã pelo WhatsApp" title="Consultar pelo WhatsApp"><span className="whatsapp-float-icon"><WhatsAppIcon /></span><span className="whatsapp-float-label">Fale com a Gabi</span></a>
   </main>;
