@@ -5,16 +5,16 @@ const siteUrl = "https://gbgrazingfoods.com.br";
 const path = "/grazing-table-chapeco/";
 const pageUrl = `${siteUrl}${path}`;
 const whatsappNumber = "5549999442478";
-const whatsappMessage = "Olá Gabi! Vi a página de grazing table e mesas para eventos da GB e gostaria de conversar sobre uma celebração em Chapecó.";
+const whatsappMessage = "Olá Gabi! Vi a página de grazing table e montagem para eventos da GB e gostaria de conversar sobre uma celebração em Chapecó.";
 const whatsapp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 export const metadata: Metadata = {
   title: "Grazing Table e Mesas para Eventos em Chapecó | GB Grazing Foods",
-  description: "Grazing tables e mesas gastronômicas em Chapecó para aniversários, recepções e celebrações. Planeje formato, data e detalhes diretamente com a Gabi.",
+  description: "Grazing tables e montagens gastronômicas em Chapecó para eventos, aniversários e celebrações. Consulte formato, convidados, data e disponibilidade.",
   alternates: { canonical: path },
   openGraph: {
     title: "Grazing Table e Mesas para Eventos em Chapecó | GB Grazing Foods",
-    description: "Grazing tables e mesas gastronômicas em Chapecó para aniversários, recepções e celebrações. Planeje formato, data e detalhes diretamente com a Gabi.",
+    description: "Grazing tables e montagens gastronômicas em Chapecó para eventos, aniversários e celebrações. Consulte formato, convidados, data e disponibilidade.",
     url: path,
     siteName: "GB Grazing Foods",
     type: "website",
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
 };
 
 const occasions = [
-  ["Aniversários", "Uma mesa para receber os convidados e deixar a experiência de compartilhar integrada à comemoração."],
-  ["Recepções", "Uma composição gastronômica para encontros em que apresentação, acolhimento e praticidade fazem diferença."],
-  ["Pequenas celebrações", "Uma proposta para datas especiais e comemorações em que a mesa também faz parte da experiência."],
+  ["Aniversários", "Uma montagem gastronômica para receber convidados e integrar a experiência à comemoração."],
+  ["Recepções", "Uma composição para encontros em que apresentação, acolhimento e praticidade fazem diferença."],
+  ["Celebrações", "Uma proposta para datas especiais em que a mesa também faz parte da experiência."],
   ["Encontros especiais", "O formato é orientado de acordo com a ocasião, o local, a quantidade aproximada de pessoas e a agenda."],
 ];
 
 const faqs = [
-  ["A GB prepara grazing table em Chapecó?", "Sim. A GB prepara mesas gastronômicas para encontros e celebrações em Chapecó e região, conforme o formato do evento, a agenda e a disponibilidade."],
+  ["A GB prepara grazing table em Chapecó?", "Sim. A GB realiza montagem de grazing tables e outras composições gastronômicas para eventos e celebrações em Chapecó e região, conforme agenda e disponibilidade."],
+  ["O que pode fazer parte da montagem?", "As possibilidades podem incluir queijos, frios, frutas, acompanhamentos e outros itens, conforme o formato do evento e as opções disponíveis."],
   ["Como definir o tamanho da mesa?", "Informe a ocasião, a quantidade aproximada de pessoas, a data e o local. Com essas informações, a Gabi orienta as possibilidades adequadas ao encontro."],
-  ["Com quanto tempo de antecedência devo entrar em contato?", "Para eventos, quanto antes a conversa começar, melhor. A confirmação depende da agenda, do formato e da disponibilidade de produção."],
-  ["Qual é a diferença entre uma grazing table e uma tábua de frios?", "A tábua é uma opção prática para compartilhar em grupos menores. A grazing table envolve planejamento para um encontro ou recepção, considerando o espaço, a quantidade de convidados e a apresentação da mesa."],
+  ["Qual é a diferença entre uma grazing table e uma tábua de frios?", "A tábua é uma opção prática para grupos menores. A grazing table envolve planejamento para um evento ou recepção, considerando espaço, convidados e apresentação."],
 ];
 
 function Brand() {
@@ -53,7 +53,7 @@ export default function Page() {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         name: "Grazing Table e Mesas para Eventos em Chapecó | GB Grazing Foods",
-        description: "Grazing tables e mesas gastronômicas para encontros e celebrações em Chapecó e região.",
+        description: "Grazing tables e montagens gastronômicas para eventos e celebrações em Chapecó e região.",
         url: pageUrl,
         inLanguage: "pt-BR",
         isPartOf: { "@id": `${siteUrl}/#website` },
@@ -73,7 +73,7 @@ export default function Page() {
 
   return <main id="inicio">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <div className="top-note"><span>Eventos em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Planejamento conforme agenda e disponibilidade</span></div>
+    <div className="top-note"><span>Montagem para eventos em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Planejamento conforme agenda e disponibilidade</span></div>
 
     <header className="site-header">
       <Brand />
@@ -83,32 +83,32 @@ export default function Page() {
 
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="eyebrow">Mesas gastronômicas para celebrações</p>
+        <p className="eyebrow">Grazing tables e montagens gastronômicas</p>
         <h1 id="hero-title">Grazing table e mesas para eventos em Chapecó<br /><em>para receber e celebrar ao redor da mesa</em></h1>
-        <p className="hero-description">A GB planeja mesas gastronômicas para aniversários, recepções e encontros especiais, considerando o tipo de evento, o número aproximado de convidados, o local e a apresentação desejada.</p>
+        <p className="hero-description">A GB realiza montagens gastronômicas para eventos, encontros e celebrações, considerando o número aproximado de convidados, o local, o estilo da ocasião e as opções disponíveis.</p>
         <div className="hero-actions"><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Conversar sobre meu evento <span aria-hidden="true">→</span></a><a className="text-link" href="#planejamento">Ver como planejar</a></div>
         <p className="order-note">Atendimento pessoal pela Gabi · Confirmação conforme agenda e disponibilidade</p>
-        <div className="hero-proof"><span>Produção artesanal</span><span>Planejamento por ocasião</span><span>Chapecó e região</span></div>
+        <div className="hero-proof"><span>Montagem personalizada</span><span>Planejamento por convidados</span><span>Chapecó e região</span></div>
       </div>
       <figure className="hero-visual"><img src="/images/gb-eventos.webp" alt="Mesa gastronômica preparada para receber convidados" fetchPriority="high" decoding="async" /><figcaption><span>01</span>Feito para celebrar</figcaption></figure>
     </section>
 
     <section className="section occasions-section" aria-labelledby="experiencia-title">
-      <div className="section-heading"><div><p className="eyebrow">Mais do que servir alimentos</p><h2 id="experiencia-title">Uma mesa pensada para o ritmo do encontro</h2></div><p>Uma grazing table funciona como parte da recepção: os convidados se aproximam, escolhem, compartilham e circulam. Por isso, o planejamento considera não apenas os sabores, mas também o perfil da ocasião e a forma como a mesa será vivida.</p></div>
+      <div className="section-heading"><div><p className="eyebrow">Uma composição que faz parte do evento</p><h2 id="experiencia-title">A montagem é pensada para a ocasião e para os convidados</h2></div><p>Queijos, frios, frutas, acompanhamentos e outros itens podem fazer parte da composição conforme o formato disponível. O planejamento considera o encontro como um todo, e não apenas a quantidade de alimentos.</p></div>
     </section>
 
     <section className="section experiences-section" id="ocasioes" aria-labelledby="ocasioes-title">
-      <div className="experiences-intro"><p className="eyebrow light">Onde esse formato faz sentido</p><h2 id="ocasioes-title">Celebrações, recepções e encontros especiais</h2><p>O formato pode mudar conforme o evento. A conversa inicial serve justamente para entender o contexto antes de definir as possibilidades.</p></div>
-      <div className="product-list">{occasions.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Experiência à mesa</p><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+      <div className="experiences-intro"><p className="eyebrow light">Onde esse formato faz sentido</p><h2 id="ocasioes-title">Aniversários, recepções, celebrações e encontros especiais</h2><p>O formato muda conforme o evento. A conversa inicial serve para entender o contexto antes de definir as possibilidades de montagem.</p></div>
+      <div className="product-list">{occasions.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Montagem para eventos</p><h3>{title}</h3><p>{text}</p></div></article>)}</div>
     </section>
 
     <section className="section occasions-section" aria-labelledby="detalhes-title">
-      <div className="section-heading"><div><p className="eyebrow">O que orienta a proposta</p><h2 id="detalhes-title">Cada evento começa por informações concretas</h2></div><p>Data, local, quantidade aproximada de pessoas e tipo de celebração ajudam a definir o que é viável. A Gabi orienta o formato com base nessas informações, na agenda e nas opções disponíveis.</p></div>
+      <div className="section-heading"><div><p className="eyebrow">O que orienta a proposta</p><h2 id="detalhes-title">Data, local, convidados e estilo da ocasião</h2></div><p>Essas informações ajudam a definir o que é viável para o evento. A Gabi orienta o formato com base na agenda, na quantidade aproximada de pessoas e nas opções disponíveis.</p></div>
       <div className="occasion-grid">
         <article className="occasion-card"><h3>Data e local</h3><p>O primeiro passo é saber quando e onde o encontro vai acontecer.</p></article>
         <article className="occasion-card"><h3>Convidados</h3><p>A quantidade aproximada ajuda a dimensionar a proposta para o evento.</p></article>
-        <article className="occasion-card"><h3>Ocasião</h3><p>Aniversário, recepção ou celebração têm dinâmicas diferentes e pedem soluções diferentes.</p></article>
-        <article className="occasion-card"><h3>Apresentação</h3><p>A composição visual faz parte da experiência e é alinhada conforme o formato disponível.</p></article>
+        <article className="occasion-card"><h3>Ocasião</h3><p>Aniversário, recepção ou celebração têm dinâmicas diferentes.</p></article>
+        <article className="occasion-card"><h3>Apresentação</h3><p>A composição visual é alinhada conforme o formato e as possibilidades disponíveis.</p></article>
       </div>
     </section>
 
@@ -116,17 +116,17 @@ export default function Page() {
       <div className="care-image"><img src="/images/gb-eventos.webp" alt="Composição gastronômica preparada pela GB para uma celebração" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito para</span><strong>receber</strong></div></div>
       <div className="care-copy"><p className="eyebrow">Como planejar</p><h2 id="planejamento-title">Seu evento começa com uma conversa</h2><ol>
         <li><span>1</span><div><h3>Conte sobre o encontro</h3><p>Informe data, local, ocasião e quantidade aproximada de convidados.</p></div></li>
-        <li><span>2</span><div><h3>Alinhe o formato</h3><p>A Gabi orienta as possibilidades que fazem sentido para o evento e para a agenda.</p></div></li>
-        <li><span>3</span><div><h3>Confirme os detalhes</h3><p>Depois do alinhamento, combine os detalhes finais conforme disponibilidade.</p></div></li>
+        <li><span>2</span><div><h3>Alinhe o formato</h3><p>A Gabi orienta as possibilidades compatíveis com o evento e com a agenda.</p></div></li>
+        <li><span>3</span><div><h3>Confirme os detalhes</h3><p>Depois do alinhamento, combine montagem e demais informações conforme disponibilidade.</p></div></li>
       </ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Planejar pelo WhatsApp <span aria-hidden="true">→</span></a></div>
     </section>
 
     <section className="section faq-section" id="duvidas" aria-labelledby="duvidas-title">
-      <div className="faq-heading"><p className="eyebrow">Antes de planejar</p><h2 id="duvidas-title">Dúvidas sobre mesas para eventos</h2></div>
+      <div className="faq-heading"><p className="eyebrow">Antes de planejar</p><h2 id="duvidas-title">Dúvidas sobre grazing tables e eventos</h2></div>
       <div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
     </section>
 
-    <section className="final-cta"><p className="eyebrow light">Tem uma celebração chegando?</p><h2>Conte para a Gabi.<br /><em>Planeje a experiência à mesa.</em></h2><p>Mesas gastronômicas para eventos em Chapecó e região, conforme formato, agenda e disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar disponibilidade <span aria-hidden="true">→</span></a></section>
+    <section className="final-cta"><p className="eyebrow light">Tem uma celebração chegando?</p><h2>Conte para a Gabi.<br /><em>Planeje a experiência à mesa.</em></h2><p>Montagens gastronômicas para eventos em Chapecó e região, conforme formato, agenda e disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar disponibilidade <span aria-hidden="true">→</span></a></section>
 
     <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Eventos conforme agenda e disponibilidade.</span></div><div className="footer-links"><Link href="/tabuas-de-frios-chapeco/">Tábuas para grupos menores</Link><Link href="/coffee-break-chapeco/">Coffee break para empresas</Link><Link href="/">Voltar ao início</Link></div></footer>
 
