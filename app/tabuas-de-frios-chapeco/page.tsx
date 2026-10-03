@@ -2,49 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const siteUrl = "https://gbgrazingfoods.com.br";
-const path = "/tabuas-de-frios-chapeco/";
+const path = "/tabuas-de-frios-chapeco";
 const pageUrl = `${siteUrl}${path}`;
-const whatsappNumber = "5549999442478";
-const whatsappMessage = "Olá Gabi! Vi a página de tábuas de frios da GB e gostaria de conhecer as opções para entrega em Chapecó.";
-const whatsapp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const title = "Tábuas de Frios em Chapecó | GB Grazing Foods";
+const description = "Tábuas de frios artesanais sob encomenda com entrega agendada em Chapecó e região. Queijos selecionados, charcutaria e acompanhamentos.";
+const whatsappUrl = `https://wa.me/5549999442478?text=${encodeURIComponent("Olá Gabi! Vim pelo site da GB e gostaria de conhecer as opções de tábuas de frios para entrega em Chapecó.")}`;
 
 export const metadata: Metadata = {
-  title: "Tábuas de Frios em Chapecó | GB Grazing Foods",
-  description: "Tábuas de frios sob encomenda em Chapecó para encontros, presentes e momentos especiais. Consulte opções e entrega em Chapecó e região pelo WhatsApp.",
-  alternates: { canonical: path },
+  title,
+  description,
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Tábuas de Frios em Chapecó | GB Grazing Foods",
-    description: "Tábuas de frios sob encomenda em Chapecó para encontros, presentes e momentos especiais. Consulte opções e entrega em Chapecó e região pelo WhatsApp.",
-    url: path,
-    siteName: "GB Grazing Foods",
+    title,
+    description,
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/images/gb-hero.webp", alt: "Tábua de frios artesanal preparada para compartilhar" }],
+    url: pageUrl,
+    images: [{ url: `${siteUrl}/images/gb-hero.webp`, alt: "Tábua de frios artesanal com queijos, frutas, pães e embutidos" }],
   },
 };
 
-const moments = [
-  ["Momentos a dois", "Uma opção para uma noite tranquila, uma conversa sem pressa ou um encontro especial em casa."],
-  ["Receber amigos", "Uma forma prática e bonita de servir enquanto todo mundo aproveita o encontro."],
-  ["Encontros em família", "Uma composição para colocar no centro da mesa e compartilhar sabores juntos."],
-  ["Presentes e celebrações", "Uma opção gastronômica para presentear ou acompanhar aniversários e pequenas comemorações."],
-];
-
 const faqs = [
-  ["Vocês entregam tábuas de frios em Chapecó?", "Sim. A GB realiza entregas em Chapecó e região. A disponibilidade e a taxa de entrega são consultadas conforme o endereço."],
-  ["As tábuas são feitas sob encomenda?", "Sim. As tábuas são montadas sob encomenda conforme a ocasião, a quantidade aproximada de pessoas, as opções disponíveis e a antecedência."],
-  ["O que pode compor uma tábua de frios?", "As composições podem incluir queijos, embutidos, acompanhamentos e outros itens selecionados. As possibilidades são orientadas diretamente pela Gabi conforme o pedido e a disponibilidade."],
-  ["Com quanto tempo de antecedência devo fazer o pedido?", "Os pedidos devem ser feitos preferencialmente com 24 horas de antecedência, conforme disponibilidade."],
-  ["Como faço meu pedido?", "Fale diretamente com a Gabi pelo WhatsApp, informe a ocasião, a quantidade aproximada de pessoas e a data desejada. Depois, combine os detalhes e confirme a entrega."],
-];
-
-function Brand() {
-  return <Link className="brand" href="/" aria-label="GB Grazing Foods - página inicial"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></Link>;
-}
-
-function WhatsAppIcon() {
-  return <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a9.87 9.87 0 0 0-8.55 14.8L2 22l5.35-1.4A10 10 0 1 0 12 2Zm0 18.18a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.17.83.85-3.08-.2-.32A8.18 8.18 0 1 1 12 20.18Zm4.48-6.12c-.24-.12-1.45-.72-1.68-.8-.22-.08-.38-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.28.18-.52.06-.25-.12-1.03-.38-1.96-1.2a7.3 7.3 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5l.37-.42c.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.13-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.23.25-.86.85-.86 2.05 0 1.21.88 2.38 1 2.55.12.16 1.73 2.64 4.19 3.7.58.26 1.04.41 1.4.53.58.19 1.12.16 1.54.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z" /></svg>;
-}
+  ["Como escolher o tamanho da tábua de frios?","Conte para a Gabi quantas pessoas vão compartilhar e qual é a ocasião. Ela orienta a escolha da composição conforme as opções disponíveis."],
+  ["As tábuas de frios podem ser entregues em Chapecó?","Sim. A entrega é agendada em Chapecó e região, conforme disponibilidade. Consulte os horários e a taxa de entrega para o seu endereço."],
+  ["Posso personalizar os itens da tábua?","Converse com a Gabi sobre suas preferências e eventuais restrições alimentares. As possibilidades de composição dependem dos ingredientes disponíveis e da antecedência do pedido."],
+] as const;
 
 export default function Page() {
   const structuredData = {
@@ -53,8 +35,8 @@ export default function Page() {
       {
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
-        name: "Tábuas de Frios em Chapecó | GB Grazing Foods",
-        description: "Tábuas de frios sob encomenda para encontros, presentes e momentos especiais em Chapecó e região.",
+        name: title,
+        description,
         url: pageUrl,
         inLanguage: "pt-BR",
         isPartOf: { "@id": `${siteUrl}/#website` },
@@ -69,82 +51,83 @@ export default function Page() {
           { "@type": "ListItem", position: 2, name: "Tábuas de frios", item: pageUrl },
         ],
       },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqs.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${siteUrl}/#organization`,
+        name: "GB Grazing Foods",
+        url: siteUrl,
+        telephone: "+5549999442478",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chapecó",
+          addressRegion: "SC",
+          addressCountry: "BR",
+        },
+        areaServed: "Chapecó",
+      },
     ],
   };
 
-  return <main id="inicio">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <div className="top-note"><span>Tábuas sob encomenda em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Pedidos preferencialmente com 24h</span></div>
-
-    <header className="site-header">
-      <Brand />
-      <nav aria-label="Navegação da página"><Link href="/">Início</Link><a href="#momentos">Ocasiões</a><a href="#como-encomendar">Como pedir</a><a href="#duvidas">Dúvidas</a></nav>
-      <a className="button button-small button-outline header-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">↗</span></a>
-    </header>
-
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-copy">
-        <p className="eyebrow">Tábuas sob encomenda para compartilhar em Chapecó</p>
-        <h1 id="hero-title">Tábuas de frios em Chapecó<br /><em>para compartilhar bons momentos</em></h1>
-        <p className="hero-description">A GB monta tábuas de frios sob encomenda com combinação de queijos, embutidos, acompanhamentos e itens selecionados para encontros, presentes e momentos especiais.</p>
-        <div className="hero-actions"><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Conhecer opções pelo WhatsApp <span aria-hidden="true">→</span></a><a className="text-link" href="#opcoes">Conhecer a proposta</a></div>
-        <p className="order-note">Atendimento pessoal pela Gabi · Opções conforme disponibilidade</p>
-        <div className="hero-proof"><span>Sob encomenda</span><span>Produção artesanal</span><span>Entrega em Chapecó e região</span></div>
-      </div>
-      <figure className="hero-visual"><img src="/images/gb-hero.webp" alt="Tábua de frios artesanal com queijos, frutas, pães e embutidos" width="1587" height="991" fetchPriority="high" decoding="async" /><figcaption><span>01</span>Feito para compartilhar</figcaption></figure>
-    </section>
-
-    <section className="section occasions-section" aria-labelledby="experiencia-title">
-      <div className="section-heading"><div><p className="eyebrow">Uma tábua para cada tipo de encontro</p><h2 id="experiencia-title">Sabores e apresentação para colocar no centro da mesa</h2></div><p>Para uma noite a dois, uma visita de amigos, um encontro em família ou uma pequena celebração, a tábua reúne praticidade, sabores e apresentação. A escolha é orientada de acordo com a ocasião e a quantidade aproximada de pessoas.</p></div>
-    </section>
-
-    <section className="section care-section" id="opcoes" aria-labelledby="opcoes-title">
-      <div className="care-image"><img src="/images/gb-hero.webp" alt="Tábua de frios preparada sob encomenda para um encontro especial" width="1587" height="991" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito para</span><strong>compartilhar</strong></div></div>
-      <div className="care-copy"><p className="eyebrow">Tábua de frios sob encomenda</p><h2 id="opcoes-title">Uma composição pensada para a ocasião</h2><p className="hero-description">As tábuas são montadas com combinação de queijos, embutidos, acompanhamentos e outros itens selecionados conforme as possibilidades disponíveis para o pedido.</p><ol>
-        <li><span>1</span><div><h3>Conte quantas pessoas vão compartilhar</h3><p>Informe a quantidade aproximada de pessoas, a ocasião, a data desejada e onde será feita a entrega.</p></div></li>
-        <li><span>2</span><div><h3>Conheça as possibilidades disponíveis</h3><p>A Gabi orienta formatos, composição e detalhes de acordo com o encontro, a antecedência e a disponibilidade para a data.</p></div></li>
-      </ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções disponíveis <span aria-hidden="true">→</span></a><p className="whatsapp-microcopy">WhatsApp · Atendimento pessoal pela Gabi</p></div>
-    </section>
-
-    <section className="section experiences-section" id="momentos" aria-labelledby="momentos-title">
-      <div className="experiences-intro"><p className="eyebrow light">Para encontros, presentes e momentos especiais</p><h2 id="momentos-title">Quando escolher uma tábua de frios?</h2><p>Uma tábua pode ser o centro de um encontro ou se transformar em um presente gastronômico para alguém especial. A proposta muda conforme a ocasião, sem perder o cuidado na montagem.</p></div>
-      <div className="product-list">{moments.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Momento para compartilhar</p><h3>{title}</h3><p>{text}</p></div></article>)}</div>
-    </section>
-
-    <section className="section occasions-section" aria-labelledby="artesanal-title">
-      <div className="section-heading"><div><p className="eyebrow">Cuidado em cada montagem</p><h2 id="artesanal-title">O que orienta a composição da tábua</h2></div><p>Quantidade de pessoas, tipo de encontro, apresentação e disponibilidade ajudam a definir o pedido. A orientação é feita diretamente com a Gabi para chegar a uma composição adequada ao momento.</p></div>
-      <div className="occasion-grid">
-        <article className="occasion-card"><h3>Quantidade</h3><p>A quantidade aproximada de pessoas ajuda a orientar o formato e a composição.</p></article>
-        <article className="occasion-card"><h3>Seleção de itens</h3><p>Queijos, embutidos, acompanhamentos e outros itens são combinados conforme as opções disponíveis.</p></article>
-        <article className="occasion-card"><h3>Apresentação</h3><p>A montagem é pensada para chegar pronta para fazer parte da mesa ou do presente.</p></article>
-        <article className="occasion-card"><h3>Atendimento pessoal</h3><p>Os detalhes do pedido são orientados diretamente pela Gabi pelo WhatsApp.</p></article>
-      </div>
-    </section>
-
-    <section className="section occasions-section" aria-labelledby="entrega-title">
-      <div className="section-heading"><div><p className="eyebrow">Entrega combinada com você</p><h2 id="entrega-title">Entrega de tábuas em Chapecó e região</h2></div><p>Informe o endereço no atendimento para consultar disponibilidade, taxa e o melhor horário para o pedido. Horários especiais podem ser combinados antecipadamente conforme disponibilidade.</p></div>
-      <div className="commercial-info"><div className="price-highlight"><span>Região atendida</span><strong>Chapecó e região</strong></div><div className="commercial-detail"><span>Disponibilidade e taxa</span><p>Consulte as condições de entrega conforme o endereço.</p></div><div className="commercial-detail"><span>Antecedência</span><p>Pedidos preferencialmente com 24 horas de antecedência, conforme disponibilidade.</p></div></div>
-    </section>
-
-    <section className="section care-section" id="como-encomendar" aria-labelledby="como-title">
-      <div className="care-copy"><p className="eyebrow">Seu pedido começa com uma conversa</p><h2 id="como-title">Como encomendar sua tábua</h2><p className="hero-description">Fale diretamente com a Gabi para conhecer as possibilidades disponíveis e combinar os detalhes do encontro ou do presente.</p><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Fazer pedido pelo WhatsApp <span aria-hidden="true">→</span></a></div>
-      <div className="care-copy"><ol><li><span>1</span><div><h3>Conte o momento</h3><p>Diga para quantas pessoas está planejando, qual é a ocasião e quando precisa.</p></div></li><li><span>2</span><div><h3>Escolha com a Gabi</h3><p>Conheça as opções disponíveis de formato, composição e apresentação.</p></div></li><li><span>3</span><div><h3>Confirme a entrega</h3><p>Informe o endereço e combine disponibilidade, taxa e demais informações do pedido.</p></div></li></ol></div>
-    </section>
-
-    <section className="section occasions-section" aria-labelledby="evento-title">
-      <div className="section-heading"><div><p className="eyebrow">Vai receber mais convidados?</p><h2 id="evento-title">Para eventos, conheça também as Grazing Tables</h2></div><p>Quando a ocasião pede uma montagem maior e pensada para receber mais pessoas, a GB também trabalha com grazing tables e composições para eventos.</p></div>
-      <div className="hero-actions"><Link className="button button-outline" href="/grazing-table-chapeco/">Ver Grazing Tables em Chapecó <span aria-hidden="true">→</span></Link><Link className="text-link" href="/cestas-de-cafe-da-manha-chapeco/">Conheça também as cestas de café da manhã</Link></div>
-    </section>
-
-    <section className="section faq-section" id="duvidas" aria-labelledby="duvidas-title">
-      <div className="faq-heading"><p className="eyebrow">Antes de pedir</p><h2 id="duvidas-title">Dúvidas sobre tábuas de frios</h2></div>
-      <div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
-    </section>
-
-    <section className="final-cta"><p className="eyebrow light">Tem um encontro especial chegando?</p><h2>Converse com a Gabi.<br /><em>Escolha uma composição para compartilhar.</em></h2><p>Tábuas de frios sob encomenda, com entrega em Chapecó e região conforme disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">→</span></a></section>
-
-    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Pedidos preferencialmente com 24h de antecedência.</span></div><div className="footer-links"><a className="button button-dark footer-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções pelo WhatsApp</a><Link href="/cestas-de-cafe-da-manha-chapeco/">Cestas de café da manhã</Link><Link href="/grazing-table-chapeco/">Grazing Tables para eventos</Link><Link href="/">Voltar para a página inicial</Link></div></footer>
-
-    <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Consultar tábuas de frios pelo WhatsApp" title="Consultar tábuas de frios"><span className="whatsapp-float-icon"><WhatsAppIcon /></span><span className="whatsapp-float-label">Fale com a Gabi</span></a>
-  </main>;
+  return (
+    <main id="inicio">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
+      <div className="top-note"><span>Entregas em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Pedidos preferencialmente com 24h</span></div>
+      <header className="site-header">
+        <a className="brand" href="/" aria-label="GB Grazing Foods - início"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></a>
+        <nav aria-label="Navegação principal"><a href="/">Início</a><a href="#duvidas">Dúvidas</a></nav>
+      </header>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <nav aria-label="Caminho de navegação"><a href="/">Início</a><span aria-hidden="true"> / </span><span aria-current="page">Tábuas de frios</span></nav>
+          <p className="eyebrow">Sabores preparados para compartilhar</p>
+          <h1 id="hero-title">Tábuas de frios <em>em Chapecó</em></h1>
+          <p className="hero-description">{description}</p>
+          <p>Receba amigos, brinde a dois ou reúna a família com uma tábua preparada pela Gabi. Converse pelo WhatsApp para conhecer as composições e agendar a entrega.</p>
+          <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Ver opções de tábuas de frios <span aria-hidden="true">↗</span></a></div>
+          <p className="order-note">Atendimento pessoal pela Gabi · Pedidos conforme disponibilidade</p>
+        </div>
+        <figure className="hero-visual">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/gb-hero.webp" alt="Tábua de frios artesanal com queijos, frutas, pães e embutidos" width="1587" height="991" fetchPriority="high" decoding="async" />
+          <figcaption>Feito para compartilhar</figcaption>
+        </figure>
+      </section>
+      <section id="opcoes" className="section care-section" aria-labelledby="opcoes-title">
+        <figure className="care-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/gb-hero.webp" alt="Tábua de frios artesanal com queijos, frutas, pães e embutidos" width="1587" height="991" loading="lazy" decoding="async" />
+        </figure>
+        <div className="care-copy">
+          <h2 id="opcoes-title">Opções de tábuas de frios em Chapecó</h2>
+          <p>Converse com a Gabi para escolher uma composição de queijos, charcutaria e acompanhamentos conforme a ocasião, o número de pessoas e os itens disponíveis.</p>
+        </div>
+      </section>
+      <section className="section occasions-section" id="ocasioes" aria-labelledby="ocasioes-title">
+        <div className="section-heading">
+          <h2 id="ocasioes-title">Tábuas para encontros e celebrações</h2>
+          <p>Para uma celebração maior, conheça nossa <Link href="/grazing-table-chapeco/">grazing table em Chapecó</Link>. Para presentear logo no início do dia, veja as <Link href="/cestas-de-cafe-da-manha-chapeco/">cestas de café da manhã em Chapecó</Link>.</p>
+        </div>
+      </section>
+      <section id="como-encomendar" className="section" aria-labelledby="como-title">
+        <div className="section-heading">
+          <h2 id="como-title">Como encomendar sua tábua de frios em Chapecó</h2>
+          <p>Informe pelo WhatsApp a data, o número de pessoas e o endereço de entrega. Consulte as composições disponíveis e faça seu pedido preferencialmente com 24 horas de antecedência.</p>
+        </div>
+        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Encomendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+      </section>
+      <section id="duvidas" className="section faq-section" aria-labelledby="duvidas-title">
+        <div className="faq-heading"><h2 id="duvidas-title">Dúvidas sobre tábuas de frios em Chapecó</h2></div>
+        <div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+      </section>
+    </main>
+  );
 }

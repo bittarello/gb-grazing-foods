@@ -2,79 +2,132 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 const siteUrl = "https://gbgrazingfoods.com.br";
-const path = "/presentes-corporativos-chapeco/";
+const path = "/presentes-corporativos-chapeco";
 const pageUrl = `${siteUrl}${path}`;
-const whatsappNumber = "5549999442478";
-const whatsappMessage = "Olá Gabi! Vi a página de presentes corporativos da GB e gostaria de conhecer opções para clientes, equipe ou parceiros.";
-const whatsapp = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const title = "Presentes Corporativos em Chapecó | GB Grazing Foods";
+const description = "Kits e mimos corporativos para empresas em Chapecó e região. Presentes gastronômicos para clientes, equipe e datas comemorativas.";
+const whatsappUrl = `https://wa.me/5549999442478?text=${encodeURIComponent("Olá Gabi! Vim pelo site da GB e gostaria de conhecer as opções de presentes corporativos para empresas.")}`;
 
 export const metadata: Metadata = {
-  title: "Presentes Corporativos em Chapecó | GB Grazing Foods",
-  description: "Presentes corporativos personalizados em Chapecó para empresas, clientes e equipes. Consulte quantidade, personalização, prazo e entrega pelo WhatsApp.",
-  alternates: { canonical: path },
+  title,
+  description,
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Presentes Corporativos em Chapecó | GB Grazing Foods",
-    description: "Presentes corporativos personalizados em Chapecó para empresas, clientes e equipes. Consulte quantidade, personalização, prazo e entrega pelo WhatsApp.",
-    url: path,
-    siteName: "GB Grazing Foods",
+    title,
+    description,
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "/images/gb-presentes.webp", alt: "Presente gastronômico artesanal preparado pela GB Grazing Foods" }],
+    url: pageUrl,
+    images: [{ url: `${siteUrl}/images/gb-presentes.webp`, alt: "Presente gastronômico artesanal para clientes e equipes em Chapecó" }],
   },
 };
 
-const audiences = [
-  ["Clientes", "Um gesto para agradecer a confiança, reconhecer uma parceria ou marcar uma relação importante."],
-  ["Equipes", "Presentes para reconhecimento, comemorações e momentos especiais dentro da empresa."],
-  ["Parceiros", "Uma experiência gastronômica para ações de relacionamento e agradecimento."],
-  ["Datas especiais", "Possibilidades para datas comemorativas e ações empresariais, conforme quantidade e antecedência."],
-];
-
 const faqs = [
-  ["A GB faz presentes corporativos em Chapecó?", "Sim. A GB prepara presentes corporativos personalizados para empresas, clientes, equipes e parceiros em Chapecó e região, conforme quantidade, prazo e disponibilidade."],
-  ["É possível personalizar?", "As possibilidades de personalização são orientadas pela Gabi conforme a opção escolhida, a quantidade e a antecedência."],
-  ["Vocês atendem pedidos em quantidade?", "Sim, mediante consulta. A viabilidade depende da quantidade solicitada, do prazo e da capacidade de produção para a data."],
-  ["O que preciso informar para solicitar?", "Informe o objetivo da ação, quem vai receber, a quantidade aproximada, a data desejada e como será a entrega ou distribuição."],
-];
-
-function Brand() {
-  return <Link className="brand" href="/" aria-label="GB Grazing Foods - página inicial"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></Link>;
-}
-
-function WhatsAppIcon() {
-  return <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a9.87 9.87 0 0 0-8.55 14.8L2 22l5.35-1.4A10 10 0 1 0 12 2Zm0 18.18a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.17.83.85-3.08-.2-.32A8.18 8.18 0 1 1 12 20.18Zm4.48-6.12c-.24-.12-1.45-.72-1.68-.8-.22-.08-.38-.12-.55.12-.16.25-.63.8-.78.96-.14.16-.28.18-.52.06-.25-.12-1.03-.38-1.96-1.2a7.3 7.3 0 0 1-1.36-1.7c-.14-.24-.02-.37.1-.5l.37-.42c.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.13-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.3-.23.25-.86.85-.86 2.05 0 1.21.88 2.38 1 2.55.12.16 1.73 2.64 4.19 3.7.58.26 1.04.41 1.4.53.58.19 1.12.16 1.54.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z" /></svg>;
-}
+  ["Quais ocasiões combinam com presentes corporativos?","Os kits e mimos podem ser preparados para reconhecer equipes, agradecer clientes e parceiros ou marcar datas comemorativas. Conte a ocasião para a Gabi orientar as opções."],
+  ["É possível personalizar os kits da empresa?","Converse com a Gabi sobre a proposta e a quantidade desejada. As possibilidades de personalização são combinadas conforme o produto, os itens disponíveis e a antecedência."],
+  ["Como consultar prazos e entregas de pedidos corporativos?","Informe a quantidade, a data e os endereços pelo WhatsApp. A Gabi confirma o prazo de produção, a disponibilidade e as condições de entrega em Chapecó e região."],
+] as const;
 
 export default function Page() {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebPage", "@id": `${pageUrl}#webpage`, name: "Presentes Corporativos em Chapecó | GB Grazing Foods", description: "Presentes corporativos personalizados para empresas em Chapecó e região.", url: pageUrl, inLanguage: "pt-BR", isPartOf: { "@id": `${siteUrl}/#website` }, about: { "@id": `${siteUrl}/#organization` }, breadcrumb: { "@id": `${pageUrl}#breadcrumb` } },
-      { "@type": "BreadcrumbList", "@id": `${pageUrl}#breadcrumb`, itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: `${siteUrl}/` },
-        { "@type": "ListItem", position: 2, name: "Presentes corporativos", item: pageUrl },
-      ] },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        name: title,
+        description,
+        url: pageUrl,
+        inLanguage: "pt-BR",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#organization` },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Início", item: `${siteUrl}/` },
+          { "@type": "ListItem", position: 2, name: "Presentes corporativos", item: pageUrl },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqs.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${siteUrl}/#organization`,
+        name: "GB Grazing Foods",
+        url: siteUrl,
+        telephone: "+5549999442478",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Chapecó",
+          addressRegion: "SC",
+          addressCountry: "BR",
+        },
+        areaServed: "Chapecó",
+      },
     ],
   };
 
-  return <main id="inicio">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <div className="top-note"><span>Presentes corporativos em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Conforme quantidade, prazo e disponibilidade</span></div>
-    <header className="site-header"><Brand /><nav aria-label="Navegação da página"><Link href="/">Início</Link><a href="#para-quem">Para quem</a><a href="#como-solicitar">Como solicitar</a><a href="#duvidas">Dúvidas</a></nav><a className="button button-small button-outline header-order-button" href={whatsapp} target="_blank" rel="noreferrer">Consultar pelo WhatsApp <span aria-hidden="true">↗</span></a></header>
-
-    <section className="hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="eyebrow">Presentes personalizados para empresas</p><h1 id="hero-title">Presentes corporativos em Chapecó<br /><em>para clientes, equipes e parceiros</em></h1><p className="hero-description">A GB prepara presentes corporativos para ações de relacionamento, datas comemorativas, agradecimentos e eventos empresariais, considerando quantidade, data e possibilidades de personalização.</p><div className="hero-actions"><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Consultar opções corporativas <span aria-hidden="true">→</span></a><a className="text-link" href="#como-solicitar">Ver como solicitar</a></div><p className="order-note">Atendimento pessoal pela Gabi · Viabilidade conforme quantidade e antecedência</p><div className="hero-proof"><span>Personalização sob consulta</span><span>Pedidos em quantidade</span><span>Chapecó e região</span></div></div><figure className="hero-visual"><img src="/images/gb-presentes.webp" alt="Presente gastronômico artesanal preparado com cuidado" width="1254" height="1254" fetchPriority="high" decoding="async" /><figcaption><span>01</span>Feito para reconhecer</figcaption></figure></section>
-
-    <section className="section occasions-section" aria-labelledby="relacoes-title"><div className="section-heading"><div><p className="eyebrow">Um gesto em nome da empresa</p><h2 id="relacoes-title">Presentes para agradecer e reconhecer</h2></div><p>Conte quem vai receber, qual é a intenção da ação e quantas pessoas serão presenteadas. A Gabi orienta as possibilidades compatíveis com prazo e produção.</p></div></section>
-
-    <section className="section experiences-section" id="para-quem" aria-labelledby="para-quem-title"><div className="experiences-intro"><p className="eyebrow light">Diferentes relações e objetivos</p><h2 id="para-quem-title">Clientes, equipes, parceiros e ações especiais</h2><p>A quantidade, a antecedência e a ocasião orientam cada pedido corporativo.</p></div><div className="product-list">{audiences.map(([title, text], index) => <article className="product-item" key={title}><span className="product-index">0{index + 1}</span><div><p className="product-label">Relacionamento corporativo</p><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
-
-    <section className="section occasions-section" aria-labelledby="proposta-title"><div className="section-heading"><div><p className="eyebrow">O que orienta o pedido</p><h2 id="proposta-title">Objetivo, quantidade, prazo e entrega</h2></div><p>Essas informações ajudam a avaliar personalização, produção e distribuição conforme a necessidade da empresa.</p></div><div className="occasion-grid"><article className="occasion-card"><h3>Objetivo</h3><p>Agradecimento, reconhecimento ou data especial.</p></article><article className="occasion-card"><h3>Quantidade</h3><p>A quantidade orienta a viabilidade de produção.</p></article><article className="occasion-card"><h3>Personalização</h3><p>Consulte possibilidades conforme opção e antecedência.</p></article><article className="occasion-card"><h3>Entrega</h3><p>Distribuição e condições são alinhadas conforme o pedido.</p></article></div></section>
-
-    <section className="section care-section" id="como-solicitar" aria-labelledby="como-title"><div className="care-image"><img src="/images/gb-presentes.webp" alt="Presente artesanal preparado pela GB Grazing Foods" width="1254" height="1254" loading="lazy" decoding="async" /><div className="care-seal" aria-hidden="true"><span>Feito com</span><strong>intenção</strong></div></div><div className="care-copy"><p className="eyebrow">Como solicitar</p><h2 id="como-title">Conte o que sua empresa precisa</h2><ol><li><span>1</span><div><h3>Explique a ação</h3><p>Conte quem vai receber, qual é o objetivo e a data.</p></div></li><li><span>2</span><div><h3>Informe a quantidade</h3><p>A quantidade ajuda a avaliar prazo e personalização.</p></div></li><li><span>3</span><div><h3>Alinhe a entrega</h3><p>Conheça as possibilidades e combine a distribuição.</p></div></li></ol><a className="button button-primary" href={whatsapp} target="_blank" rel="noreferrer">Solicitar pelo WhatsApp <span aria-hidden="true">→</span></a></div></section>
-
-    <section className="section faq-section" id="duvidas" aria-labelledby="duvidas-title"><div className="faq-heading"><p className="eyebrow">Antes de solicitar</p><h2 id="duvidas-title">Dúvidas sobre presentes corporativos</h2></div><div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
-    <section className="final-cta"><p className="eyebrow light">Quer reconhecer alguém em nome da empresa?</p><h2>Converse com a Gabi.<br /><em>Encontre uma opção para a sua ação.</em></h2><p>Presentes corporativos em Chapecó e região, conforme quantidade, prazo e disponibilidade.</p><a className="button button-light" href={whatsapp} target="_blank" rel="noreferrer">Consultar possibilidades <span aria-hidden="true">→</span></a></section>
-    <footer><div className="footer-brand"><Brand /><p>Cestas, tábuas, presentes e experiências gastronômicas.</p></div><div className="footer-contact"><strong>Chapecó e região</strong><span>Pedidos corporativos conforme quantidade e prazo.</span></div><div className="footer-links"><Link href="/coffee-break-chapeco/">Coffee break para empresas</Link><Link href="/presentes-gastronomicos-chapeco/">Presentes gastronômicos</Link><Link href="/">Voltar ao início</Link></div></footer>
-    <a className="whatsapp-float" href={whatsapp} target="_blank" rel="noreferrer" aria-label="Falar com a Gabi sobre presentes corporativos pelo WhatsApp" title="Falar sobre presentes corporativos"><span className="whatsapp-float-icon"><WhatsAppIcon /></span><span className="whatsapp-float-label">Fale com a Gabi</span></a>
-  </main>;
+  return (
+    <main id="inicio">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
+      <div className="top-note"><span>Entregas em Chapecó e região</span><span className="top-note-divider" aria-hidden="true" /><span>Pedidos preferencialmente com 24h</span></div>
+      <header className="site-header">
+        <a className="brand" href="/" aria-label="GB Grazing Foods - início"><span className="brand-monogram">GB</span><span className="brand-name"><strong>Grazing Foods</strong><small>por Gabi</small></span></a>
+        <nav aria-label="Navegação principal"><a href="/">Início</a><a href="#duvidas">Dúvidas</a></nav>
+      </header>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <nav aria-label="Caminho de navegação"><a href="/">Início</a><span aria-hidden="true"> / </span><span aria-current="page">Presentes corporativos</span></nav>
+          <p className="eyebrow">Cuidado para clientes, equipes e parceiros</p>
+          <h1 id="hero-title">Presentes corporativos <em>em Chapecó</em></h1>
+          <p className="hero-description">{description}</p>
+          <p>Reconheça pessoas com kits e mimos gastronômicos preparados pela Gabi. Converse pelo WhatsApp para planejar presentes para sua empresa conforme a ocasião, a quantidade e a data desejada.</p>
+          <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Conhecer presentes corporativos <span aria-hidden="true">↗</span></a></div>
+          <p className="order-note">Atendimento pessoal pela Gabi · Pedidos conforme disponibilidade</p>
+        </div>
+        <figure className="hero-visual">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/gb-presentes.webp" alt="Presente gastronômico artesanal para clientes e equipes em Chapecó" width="1254" height="1254" fetchPriority="high" decoding="async" />
+          <figcaption>Feito para reconhecer pessoas</figcaption>
+        </figure>
+      </section>
+      <section id="opcoes" className="section care-section" aria-labelledby="opcoes-title">
+        <figure className="care-image">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/gb-presentes.webp" alt="Presente gastronômico artesanal para clientes e equipes em Chapecó" width="1254" height="1254" loading="lazy" decoding="async" />
+        </figure>
+        <div className="care-copy">
+          <h2 id="opcoes-title">Opções de presentes corporativos em Chapecó</h2>
+          <p>Conheça as opções de kits e mimos para clientes, equipes e parceiros. A Gabi orienta a escolha dos produtos e as possibilidades de personalização conforme a quantidade e a antecedência.</p>
+        </div>
+      </section>
+      <section className="section occasions-section" id="ocasioes" aria-labelledby="ocasioes-title">
+        <div className="section-heading">
+          <h2 id="ocasioes-title">Presentes para reconhecer e agradecer</h2>
+          <p>Para reunir sua equipe, conheça nosso <Link href="/coffee-break-chapeco/">coffee break em Chapecó</Link>. Para outras ocasiões especiais, veja também nossos <Link href="/presentes-gastronomicos-chapeco/">presentes gastronômicos em Chapecó</Link>.</p>
+        </div>
+      </section>
+      <section id="como-encomendar" className="section" aria-labelledby="como-title">
+        <div className="section-heading">
+          <h2 id="como-title">Como encomendar presentes corporativos em Chapecó</h2>
+          <p>Informe pelo WhatsApp a quantidade de presentes, a ocasião, a data e os endereços de entrega. Converse com antecedência para consultar as opções, a personalização e o orçamento para sua empresa.</p>
+        </div>
+        <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Encomendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+      </section>
+      <section id="duvidas" className="section faq-section" aria-labelledby="duvidas-title">
+        <div className="faq-heading"><h2 id="duvidas-title">Dúvidas sobre presentes corporativos em Chapecó</h2></div>
+        <div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+      </section>
+    </main>
+  );
 }
